@@ -5,7 +5,7 @@
 		<div class="row justify-content-center">
 			<div class="col-md-12 col-lg-10">
 				<div class="wrap d-md-flex">
-					<div class="img" style="background-image: url('{{asset('assets/images/login-image.jpg')}}');">
+					<div class="img" style="background-image: url('{{asset('assets/images/login-img.svg')}}');">
 					</div>
 					<div class="login-wrap p-4 p-md-5">
 						<div class="d-flex">
@@ -34,7 +34,7 @@
 									</label> -->
 								</div>
 								<div class="w-50 text-md-right">
-									<a href="#">Forgot Password</a>
+									<a href="{{url('forget-password')}}">Forgot Password</a>
 								</div>
 							</div>
 						</form>

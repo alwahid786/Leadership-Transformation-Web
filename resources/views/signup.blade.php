@@ -44,7 +44,7 @@
 						</form>
 						<p class="text-center">Already a member? <a data-toggle="tab" href="{{url('/login')}}">Sign In</a></p>
 					</div>
-					<div class="img" style="background-image: url('{{asset('assets/images/login-image.jpg')}}');">
+					<div class="img" style="background-image: url('{{asset('assets/images/signup-img.svg')}}');">
 					</div>
 				</div>
 			</div>

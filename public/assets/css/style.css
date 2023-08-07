@@ -12001,6 +12001,41 @@ h5,
   background: #e3b04b;
   color: #fff;
 }
-.text-green{
+
+.text-green {
   color: #66CE2C;
+}
+
+.otp-inputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.otp-inputs input {
+  width: 60px !important;
+  height: 60px;
+  padding-left: 24px !important;
+}
+
+.otp-inputs input:focus {
+  width: 60px !important;
+  height: 60px;
+}
+
+@media screen and (max-width: 576px) {
+  .otp-inputs input {
+    width: 45px !important;
+    height: 45px;
+    padding-left: 17px !important;
+  }
+
+  .otp-inputs input:focus {
+    width: 45px !important;
+    height: 45px;
+  }
 }

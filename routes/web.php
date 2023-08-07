@@ -19,3 +19,12 @@ Route::get('/login', function () {
 Route::get('/signup', function () {
     return view('signup');
 });
+Route::get('/forget-password', function () {
+    return view('forget-password');
+});
+Route::get('/otp-code', function () {
+    return view('otp-code');
+});
+Route::get('/reset-password', function () {
+    return view('reset-password');
+});
