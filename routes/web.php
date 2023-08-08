@@ -14,17 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/login', function () {
-    return view('login');
+    return view('auth.login');
 });
 Route::get('/signup', function () {
-    return view('signup');
+    return view('auth.signup');
 });
 Route::get('/forget-password', function () {
-    return view('forget-password');
+    return view('auth.forget-password');
 });
 Route::get('/otp-code', function () {
-    return view('otp-code');
+    return view('auth.otp-code');
 });
 Route::get('/reset-password', function () {
-    return view('reset-password');
+    return view('auth.reset-password');
+});
+Route::get('/cover', function () {
+    return view('pages.cover');
 });
