@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('auth.login');
+});
 Route::get('/login', function () {
     return view('auth.login');
 });
@@ -28,6 +32,35 @@ Route::get('/otp-code', function () {
 Route::get('/reset-password', function () {
     return view('auth.reset-password');
 });
-Route::get('/cover', function () {
-    return view('pages.cover');
+
+Route::post('/register', [AuthController::class, 'signupFunction'])->name('signupFunction');
+Route::post('/signin', [AuthController::class, 'signinFunction'])->name('signinFunction');
+Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name('forgotPassword');
+Route::post('/otp-verification', [AuthController::class, 'verifyOtp'])->name('verifyOtp');
+Route::post('/password-reset', [AuthController::class, 'resetPassword'])->name('resetPassword');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/cover', function () {
+        return view('pages.cover');
+    });
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::get('/slide/1', function () {
+        return view('pages.slide1');
+    });
+    Route::get('/slide/2', function () {
+        return view('pages.slide2');
+    });
+    Route::get('/slide/3', function () {
+        return view('pages.slide3');
+    });
+    Route::get('/slide/4', function () {
+        return view('pages.slide4');
+    });
+    Route::get('/slide/5', function () {
+        return view('pages.slide5');
+    });
+    Route::get('/slide/6', function () {
+        return view('pages.slide6');
+    });
 });

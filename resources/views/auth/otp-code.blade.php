@@ -12,24 +12,19 @@
 							</div>
 							<p>Please enter OTP Code you received in your email address.</p>
 						</div>
-						<form action="#" class="signin-form">
-							<!-- <div class="form-group mb-3">
-								<label class="label" for="name">Email</label>
-								<input type="email" class="form-control" placeholder="Enter Email" required>
-							</div> -->
-							<div class="form-group login-email-field d-flex justify-content-center">
-								<div class="otp-inputs my-3">
-									<input type="text" maxlength="1" name="otp[]" class="form-control" id="input1" onkeyup="moveToNext(this, 'input2')" aria-describedby="emailHelp">
-									-<input type="text" maxlength="1" name="otp[]" class="form-control" id="input2" onkeyup="moveToNext(this, 'input3')" aria-describedby="emailHelp">
-									-<input type="text" maxlength="1" name="otp[]" class="form-control" id="input3" onkeyup="moveToNext(this, 'input4')" aria-describedby="emailHelp">
-									-<input type="text" maxlength="1" name="otp[]" class="form-control" id="input4" aria-describedby="emailHelp">
-								</div>
+						<div class="form-group login-email-field d-flex justify-content-center">
+							<div class="otp-inputs my-3">
+								<input type="text" maxlength="1" name="otp[]" class="form-control validate" id="input1" onkeyup="moveToNext(this, 'input2')" aria-describedby="emailHelp">
+								-<input type="text" maxlength="1" name="otp[]" class="form-control validate" id="input2" onkeyup="moveToNext(this, 'input3')" aria-describedby="emailHelp">
+								-<input type="text" maxlength="1" name="otp[]" class="form-control validate" id="input3" onkeyup="moveToNext(this, 'input4')" aria-describedby="emailHelp">
+								-<input type="text" maxlength="1" name="otp[]" class="form-control validate" id="input4" aria-describedby="emailHelp">
 							</div>
-							<div class="form-group text-center">
-								<button type="submit" class="w-50  form-control btn btn-primary rounded submit px-3">Verify</button>
-							</div>
+						</div>
+						<div class="form-group text-center">
+							<input type="hidden" name="otp_code" id="otpCode_d">
+							<button id="verifyOtpButton" class="w-50 form-control btn btn-primary rounded submit px-3">Verify</button>
+						</div>
 
-						</form>
 						<p class="text-center">Incorrect Email? <a data-toggle="tab" href="{{url('/login')}}">Enter Email</a></p>
 					</div>
 				</div>
@@ -39,4 +34,89 @@
 </section>
 @endsection
 @section('insertjavascript')
+<script>
+	function moveToNext(currentInput, nextInputId) {
+		if (currentInput.value.length === currentInput.maxLength) {
+			document.getElementById(nextInputId).focus();
+		}
+	}
+</script>
+<script>
+	$(document).ready(function() {
+		$("#input1").focus();
+		let errors = 0;
+		$("#verifyOtpButton").click(function() {
+			combineOTP();
+			$(".validate").each(function() {
+				if ($(this).val() == '') {
+					errors++;
+					$(this).css('border', '1px solid red');
+				} else {
+					errors--;
+					$(this).css('border', '1px solid rgba(0, 0, 0, 0.1)');
+				}
+			})
+			if (errors > 0) {
+				Swal.fire({
+					title: 'Empty Fields',
+					text: 'All fields are required',
+					icon: 'error',
+					confirmButtonColor: "#66CE2C"
+				})
+				return;
+			}
+			// Ajax REQUEST START
+			var csrfToken = $('meta[name="csrf-token"]').attr('content');
+			$.ajax({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				},
+				url: `{{url('/otp-verification')}}`,
+				type: "POST",
+				data: {
+					otp_code: $("#otpCode_d").val()
+				},
+				cache: false,
+				success: function(dataResult) {
+					if (dataResult.success == false) {
+						Swal.fire({
+							title: 'Error',
+							text: dataResult.message,
+							icon: 'error',
+							confirmButtonColor: "#66CE2C"
+						})
+						return;
+					} else {
+						Swal.fire({
+							title: 'SUCCESS',
+							text: dataResult.message,
+							icon: 'success',
+							confirmButtonColor: "#66CE2C"
+						}).then((result) => {
+							window.location.href = `{{url('/reset-password')}}`;
+						});
+					}
+				},
+				error: function(jqXHR, exception) {
+					Swal.fire({
+						title: 'Error',
+						text: jqXHR.responseJSON.message,
+						icon: 'error',
+						confirmButtonColor: "#66CE2C"
+					})
+				}
+			});
+			// Ajax REQUEST END
+
+
+		})
+
+		// Combine OTP CODE 
+		function combineOTP() {
+			const otpInputs = document.querySelectorAll('input[name="otp[]"]');
+			const otpValue = Array.from(otpInputs).map(input => input.value).join('');
+			document.getElementById('otpCode_d').value = otpValue;
+		}
+	})
+</script>
 @endsection

@@ -13,9 +13,7 @@
 
 <body>
     @yield('content')
-
     @include('includes.footer')
-    @yield('insertjavascript')
 </body>
 
 </html>
