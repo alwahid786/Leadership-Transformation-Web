@@ -88,6 +88,6 @@
 @endsection
 @section('insertjavascript')
 <script>
-	$('.sidenav  li:nth-of-type(1)').addClass('active');
+	$('.sidenav  li:nth-of-type(3)').addClass('active');
 </script>
 @endsection

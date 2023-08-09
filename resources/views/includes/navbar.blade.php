@@ -243,9 +243,33 @@
             border-radius: 10px;
         }
 
+        .sidenav .disabled-item {
+            background: #e3e3e3 !important;
+            /* border-radius: 10px; */
+        }
+
+        .sidenav .disabled-item i {
+            color: gray;
+        }
+
         .sidenav .nav-item:hover .nav-link {
             color: white !important;
         }
+
+        .sidenav .disabled-item:hover {
+            background: #e3e3e3 !important;
+            border-radius: 0px;
+        }
+
+        .sidenav .disabled-item:hover .nav-link {
+            color: gray !important;
+        }
+
+        .sidenav .disabled-item:hover i {
+            color: gray !important;
+        }
+
+
 
         .sidenav .nav-item:hover .nav-link .icon-white {
             display: block;
@@ -442,6 +466,9 @@
         line-height: 1.5px;
     }
 </style>
+@php
+$page = auth()->user()->page_number;
+@endphp
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-header">
     <a class="navbar-brand logo-header" href="#">
         <!-- <img style="width: 100%; height:100%; object-fit:contain;" src="{{asset('assets/images/site-logo.png')}}" alt="Admin logo"> -->
@@ -466,22 +493,21 @@
                     <img src="{{asset('assets/images/Vector.png')}}" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">
                     <div class="dropdown-menu text-center logout-dropdown" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item logout" href="{{(url('logout'))}}"><i class="fas fa-sign-out-alt pr-2" aria-hidden="true"></i>Logout</a>
-
                     </div>
                 </div>
             </div>
         </form>
         <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
-            <li class="nav-item my-1 active">
-                <a class="nav-link sidenav-item dasboard-link d-flex align-items-center" href="{{url('dashboard')}}">
+            <li class="nav-item my-1">
+                <a class="nav-link sidenav-item dasboard-link d-flex align-items-center" href="{{url('/cover')}}">
                     <!-- <img src="{{asset('assets/images/d-white.png')}}" class="icon-white pr-2">
                     <img src="{{asset('assets/images/d-blue.png')}}" class="icon-blue pr-2"> -->
                     <i style="font-size: 20px;" class="fas fa-book mr-2"></i>
                     Cover Page
                 </a>
             </li>
-            <li class="nav-item my-1 ">
-                <a class="nav-link sidenav-item d-flex align-items-center" href="{{url('plot')}}">
+            <li class="nav-item my-1  <?php if ($page < 1) echo "disabled-item my-0"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 1) echo "style='pointer-events: none'"; ?> href="{{url('slide/1')}}">
                     <div class="position-relative">
                         <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
                         <div class="position-absolute numberingSlideDiv">
@@ -491,8 +517,8 @@
                     Slide 01
                 </a>
             </li>
-            <li class="nav-item my-1 ">
-                <a class="nav-link sidenav-item d-flex align-items-center" href="{{url('plot')}}">
+            <li class="nav-item my-1 <?php if ($page < 2) echo "disabled-item"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 2) echo "style='pointer-events: none'"; ?> href="{{url('slide/2')}}">
                     <div class="position-relative">
                         <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
                         <div class="position-absolute numberingSlideDiv">
@@ -502,8 +528,8 @@
                     Slide 02
                 </a>
             </li>
-            <li class="nav-item my-1 ">
-                <a class="nav-link sidenav-item d-flex align-items-center" href="{{url('plot')}}">
+            <li class="nav-item my-1 <?php if ($page < 3) echo "disabled-item"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 3) echo "style='pointer-events: none'"; ?> href="{{url('slide/3')}}">
                     <div class="position-relative">
                         <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
                         <div class="position-absolute numberingSlideDiv">
@@ -513,8 +539,8 @@
                     Slide 03
                 </a>
             </li>
-            <li class="nav-item my-1 ">
-                <a class="nav-link sidenav-item d-flex align-items-center" href="{{url('plot')}}">
+            <li class="nav-item my-1 <?php if ($page < 4) echo "disabled-item"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 4) echo "style='pointer-events: none'"; ?> href="{{url('slide/4')}}">
                     <div class="position-relative">
                         <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
                         <div class="position-absolute numberingSlideDiv">
@@ -524,8 +550,8 @@
                     Slide 04
                 </a>
             </li>
-            <li class="nav-item my-1 ">
-                <a class="nav-link sidenav-item d-flex align-items-center" href="{{url('plot')}}">
+            <li class="nav-item my-1 <?php if ($page < 5) echo "disabled-item"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 5) echo "style='pointer-events: none'"; ?> href="{{url('slide/5')}}">
                     <div class="position-relative">
                         <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
                         <div class="position-absolute numberingSlideDiv">
@@ -535,8 +561,8 @@
                     Slide 05
                 </a>
             </li>
-            <li class="nav-item my-1 ">
-                <a class="nav-link sidenav-item d-flex align-items-center" href="{{url('plot')}}">
+            <li class="nav-item my-1 <?php if ($page < 6) echo "disabled-item"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 6) echo "style='pointer-events: none'"; ?> href="{{url('slide/6')}}">
                     <div class="position-relative">
                         <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
                         <div class="position-absolute numberingSlideDiv">
