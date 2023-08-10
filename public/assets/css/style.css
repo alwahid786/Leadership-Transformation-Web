@@ -12043,9 +12043,18 @@ h5,
 
 .contentSection {
   margin-top: 70px;
-  margin-left: 240px;
+  margin-left: 250px;
   padding: 20px;
 }
-.paddingXAxis{
-  
+
+.contentRow {
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px 0px #e3e3e3
+}
+
+.headingTitle {
+  color: #404040;
+  font-weight: 600;
 }

@@ -53,10 +53,10 @@
 </style>
 @include('includes.navbar')
 <section class="contentSection position-relative">
-	<div class="container-fluid">
+	<div class="container-fluid contentRow">
 		<div class="row">
 			<div class="col-12 text-center">
-				<h3 class="text-secondary">Slide 01</h3>
+				<h3 class="headingTitle">Slide 01</h3>
 			</div>
 			<div class="col-12 mt-3">
 				<!-- <form class="w-50 mx-auto" action="">
@@ -83,8 +83,8 @@
 
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
-		<a href="javascript:void" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
-		<a href="javascript:void" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		<a href="{{url('/cover')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
+		<a href="{{url('/slide/2')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 	</div>
 </section>
 @endsection

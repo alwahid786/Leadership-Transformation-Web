@@ -485,7 +485,7 @@ $page = auth()->user()->page_number;
         <form class="form-inline  mt-2 mt-md-0 ml-auto navbar-header-right-section pt-2 pt-lg-0">
             <div class="form-group has-search profile mr-2">
 
-                <span class="mr-2">Name here</span>
+                <span class="mr-2">{{auth()->user()->name}} {{auth()->user()->last_name}}</span>
                 <img src="{{asset('assets/images/profile.png')}}">
             </div>
             <div class="form-group has-search">
@@ -570,6 +570,36 @@ $page = auth()->user()->page_number;
                         </div>
                     </div>
                     Slide 06
+                </a>
+            </li>
+            <li class="nav-item my-1 <?php if ($page < 7) echo "disabled-item"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 7) echo "style='pointer-events: none'"; ?> href="{{url('gratitude')}}">
+                    <i style="font-size: 22px;" class="fas fa-heart mr-3"></i>
+                    Gratitude
+                </a>
+            </li>
+            <li class="nav-item my-1 <?php if ($page < 8) echo "disabled-item"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 8) echo "style='pointer-events: none'"; ?> href="{{url('wow')}}">
+                    <i style="font-size: 22px;" class="fas fa-surprise mr-3"></i>
+                    Wow
+                </a>
+            </li>
+            <li class="nav-item my-1 <?php if ($page < 9) echo "disabled-item"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 9) echo "style='pointer-events: none'"; ?> href="{{url('vision')}}">
+                    <i style="font-size: 22px;" class="fas fa-binoculars mr-3"></i>
+                    Vision
+                </a>
+            </li>
+            <li class="nav-item my-1 <?php if ($page < 10) echo "disabled-item"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 10) echo "style='pointer-events: none'"; ?> href="{{url('inspiration')}}">
+                    <i style="font-size: 22px;" class="fas fa-lightbulb mr-3"></i>
+                    Inspiration
+                </a>
+            </li>
+            <li class="nav-item my-1 <?php if ($page < 11) echo "disabled-item"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 11) echo "style='pointer-events: none'"; ?> href="{{url('execution')}}">
+                    <i style="font-size: 22px;" class="fas fa-play mr-3"></i>
+                    Execution
                 </a>
             </li>
 

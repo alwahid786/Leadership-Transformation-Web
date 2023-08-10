@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,24 +44,28 @@ Route::middleware('auth')->group(function () {
     Route::get('/cover', function () {
         return view('pages.cover');
     });
-    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/slide/{slideNumber}', [ContentController::class, 'showSlide'])->name('slide');
+    Route::get('/gratitude/con', [ContentController::class, 'gratitudeFunction'])->name('gratitudeFunction');
+    Route::get('/wow/con', [ContentController::class, 'wowFunction'])->name('wowFunction');
+    Route::get('/vision/con', [ContentController::class, 'visionFunction'])->name('visionFunction');
+    Route::get('/inspiration/con', [ContentController::class, 'inspirationFunction'])->name('inspirationFunction');
+    Route::get('/execution/con', [ContentController::class, 'executionFunction'])->name('executionFunction');
 
-    Route::get('/slide/1', function () {
-        return view('pages.slide1');
+    Route::get('/cover/submit', [ContentController::class, 'submitCover'])->name('submitCover');
+
+    Route::get('/gratitude', function () {
+        return view('pages.gratitude');
     });
-    Route::get('/slide/2', function () {
-        return view('pages.slide2');
+    Route::get('/wow', function () {
+        return view('pages.wow');
     });
-    Route::get('/slide/3', function () {
-        return view('pages.slide3');
+    Route::get('/vision', function () {
+        return view('pages.vision');
     });
-    Route::get('/slide/4', function () {
-        return view('pages.slide4');
+    Route::get('/inspiration', function () {
+        return view('pages.inspiration');
     });
-    Route::get('/slide/5', function () {
-        return view('pages.slide5');
-    });
-    Route::get('/slide/6', function () {
-        return view('pages.slide6');
+    Route::get('/execution', function () {
+        return view('pages.execution');
     });
 });
