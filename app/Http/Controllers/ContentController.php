@@ -22,9 +22,13 @@ class ContentController extends Controller
     {
         $loginUserId = Auth::user()->id;
         $user = User::find($loginUserId);
-        $book = Book::where('user_id', $loginUserId)->first('designed_for');
-        if($book == null || empty($book)){
-            return redirect()->back()->withErrors('Please add proper data first.');
+
+        // If Coming From Cover Page
+        if ($slideNumber == 1) {
+            $book = Book::where('user_id', $loginUserId)->first('designed_for');
+            if ($book == null || empty($book)) {
+                return redirect()->back()->withErrors('Please add proper data first.');
+            }
         }
         if ($user->page_number >= $slideNumber) {
             return view('pages.slide' . $slideNumber);
@@ -102,6 +106,14 @@ class ContentController extends Controller
             User::where('id', $loginUserId)->update(['page_number' => 11]);
             return redirect('/execution');
         }
+    }
+
+    // Show Cover Page
+    public function coverPage(Request $request)
+    {
+        $loginUserId = Auth::user()->id;
+        $book = Book::where('user_id', $loginUserId)->first();
+        return view('pages.cover', compact('book'));
     }
 
     // submit cover FUnction 

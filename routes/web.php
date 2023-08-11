@@ -41,9 +41,9 @@ Route::post('/otp-verification', [AuthController::class, 'verifyOtp'])->name('ve
 Route::post('/password-reset', [AuthController::class, 'resetPassword'])->name('resetPassword');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/cover', function () {
-        return view('pages.cover');
-    });
+    // Functional Routes 
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/cover', [ContentController::class, 'coverPage'])->name('coverPage');
     Route::get('/slide/{slideNumber}', [ContentController::class, 'showSlide'])->name('slide');
     Route::get('/gratitude/con', [ContentController::class, 'gratitudeFunction'])->name('gratitudeFunction');
     Route::get('/wow/con', [ContentController::class, 'wowFunction'])->name('wowFunction');
@@ -51,8 +51,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/inspiration/con', [ContentController::class, 'inspirationFunction'])->name('inspirationFunction');
     Route::get('/execution/con', [ContentController::class, 'executionFunction'])->name('executionFunction');
 
-    Route::get('/cover/submit', [ContentController::class, 'submitCover'])->name('submitCover');
+    // Submit Forms 
+    Route::post('/cover/submit', [ContentController::class, 'submitCover'])->name('submitCover');
 
+
+    // Single Routes 
     Route::get('/gratitude', function () {
         return view('pages.gratitude');
     });

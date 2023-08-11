@@ -32,7 +32,7 @@
 								<a href="{{url('forget-password')}}">Forgot Password</a>
 							</div>
 						</div>
-						<p class="text-center">Not a member? <a data-toggle="tab" href="{{url('/signup')}}">Sign Up</a></p>
+						<p class="text-center">Not a member? <a href="{{url('/signup')}}">Sign Up</a></p>
 					</div>
 				</div>
 			</div>
@@ -80,6 +80,7 @@
 				data: data,
 				cache: false,
 				success: function(dataResult) {
+					console.log(dataResult.data.page_number);
 					if (dataResult.success == false) {
 						Swal.fire({
 							title: 'Error',
@@ -89,17 +90,27 @@
 						})
 						return;
 					} else {
-						var routeMapping = [
-							'cover',
-							'slide/1',
-							'slide/2',
-							'slide/3',
-							'slide/4',
-							'slide/5',
-							'slide/6',
-							'slide/7',
-						];
-						window.location.href = `{{url('${routeMapping[dataResult.data.page_number]}')}}`;
+						var routeMapping = {
+							0: 'cover',
+							1: 'slide/1',
+							2: 'slide/2',
+							3: 'slide/3',
+							4: 'slide/4',
+							5: 'slide/5',
+							6: 'slide/6',
+							8: 'gratitude',
+							9: 'wow',
+							10: 'vision',
+							11: 'inspiration',
+							11: 'execution',
+						};
+						url = dataResult.data.page_number;
+						if (routeMapping.hasOwnProperty(url)) {
+							var route = routeMapping[url];
+							window.location.href = `{{url('${route}')}}`;
+						} else {
+							console.error('No route found for page number:', url);
+						}
 					}
 				},
 				error: function(jqXHR, exception) {

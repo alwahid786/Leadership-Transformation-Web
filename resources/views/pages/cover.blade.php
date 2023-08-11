@@ -68,15 +68,15 @@
 				@endif
 				<div class="form-group mb-3">
 					<label class="label" for="name">Designed For:</label>
-					<input type="text" class="form-control validation" id="designedFor" placeholder="ex: Patrick Milton" required>
+					<input type="text" class="form-control validation" value="{{$book->designed_for ?? ''}}" id="designedFor" placeholder="ex: Patrick Milton" required>
 				</div>
 				<div class="form-group mb-3">
 					<label class="label" for="name">First Name:</label>
-					<input type="text" value="{{auth()->user()->name ?? ''}}" class="form-control validation" id="firstName" placeholder="ex: Jennifer" required>
+					<input type="text" value="{{$book->first_name ?? auth()->user()->name}}" class="form-control validation" id="firstName" placeholder="ex: Jennifer" required>
 				</div>
 				<div class="form-group mb-3">
 					<label class="label" for="name">Last Name:</label>
-					<input type="text" value="{{auth()->user()->last_name ?? ''}}" class="form-control validation" id="lastName" placeholder="ex: Star" required>
+					<input type="text" value="{{$book->last_name ?? auth()->user()->last_name}}" class="form-control validation" id="lastName" placeholder="ex: Star" required>
 				</div>
 				<div class="form-group w-50 mx-auto">
 					<button id="submitCoverButton" class="form-control btn btn-primary rounded submit px-3">Submit</button>
@@ -105,7 +105,6 @@
 					errors++;
 					$(this).css('border', '1px solid red');
 				} else {
-					errors--;
 					$(this).css('border', '1px solid rgba(0, 0, 0, 0.1)');
 				}
 			})
@@ -116,6 +115,7 @@
 					icon: 'error',
 					confirmButtonColor: "#66CE2C"
 				})
+				errors--;
 				return;
 			}
 			var data = {
@@ -130,7 +130,7 @@
 				headers: {
 					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 				},
-				url: `{{url('/signin')}}`,
+				url: `{{url('/cover/submit')}}`,
 				type: "POST",
 				data: data,
 				cache: false,
@@ -144,17 +144,12 @@
 						})
 						return;
 					} else {
-						var routeMapping = [
-							'cover',
-							'slide/1',
-							'slide/2',
-							'slide/3',
-							'slide/4',
-							'slide/5',
-							'slide/6',
-							'slide/7',
-						];
-						window.location.href = `{{url('${routeMapping[dataResult.data.page_number]}')}}`;
+						Swal.fire({
+							title: 'Success',
+							text: dataResult.message,
+							icon: 'success',
+							confirmButtonColor: "#66CE2C"
+						})
 					}
 				},
 				error: function(jqXHR, exception) {

@@ -45,7 +45,7 @@ class AuthController extends Controller
         $user->phone = $request->phone;
         $user->password = bcrypt($request->password);
         $user->type = "user";
-        // $user->page_number = "1";
+        $user->page_number = "0";
         $status = $user->save();
         if ($status) {
             return $this->sendResponse($user, 'Registration Successfull!');
