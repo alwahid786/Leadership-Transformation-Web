@@ -497,7 +497,7 @@ $page = auth()->user()->page_number;
                 </div>
             </div>
         </form>
-        <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
+        <ul class="navbar-nav mr-auto sidenav pb-5" id="navAccordion">
             <li class="nav-item my-1">
                 <a class="nav-link sidenav-item dasboard-link d-flex align-items-center" href="{{url('/cover')}}">
                     <!-- <img src="{{asset('assets/images/d-white.png')}}" class="icon-white pr-2">
@@ -600,6 +600,12 @@ $page = auth()->user()->page_number;
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 11) echo "style='pointer-events: none'"; ?> href="{{url('execution')}}">
                     <i style="font-size: 22px;" class="fas fa-play mr-3"></i>
                     Execution
+                </a>
+            </li>
+            <li class="nav-item my-1 <?php if ($page < 12) echo "disabled-item"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 12) echo "style='pointer-events: none'"; ?> href="{{url('conclusion')}}">
+                    <i style="font-size: 22px;" class="fas fa-bullseye mr-3"></i>
+                    Conclusion
                 </a>
             </li>
 

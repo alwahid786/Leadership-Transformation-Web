@@ -78,48 +78,122 @@
 @include('includes.navbar')
 <section class="contentSection position-relative">
 	<div class="container-fluid contentRow">
-		<div class="row">
-			<div class="col-12 text-center">
-				<h3 class="headingTitle">Execution</h3>
-			</div>
-			<div class="col-12 mt-3">
+		<form action="{{route('submitExecution')}}" id="excutionForm" method="POST">
+			@csrf
+			<div class="row">
+				<div class="col-12 text-center">
+					<h3 class="headingTitle">Execution</h3>
+				</div>
+				<div class="col-12 mt-3">
 
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui vero eaque obcaecati ab esse mollitia, reiciendis sed nihil assumenda quos. Sed magnam blanditiis laudantium enim nisi deleniti itaque molestiae quia omnis voluptatum, suscipit neque a eaque dolores reprehenderit perspiciatis doloribus veniam maxime, eum earum officiis commodi facere architecto. Illo, corporis.</p>
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint repellendus, aliquam ex laudantium maxime a dignissimos similique eius fuga ut ullam fugit sapiente repudiandae libero atque, cumque laborum inventore numquam eos odit perferendis. Nihil facilis porro, natus dolore eos nisi? Inventore, in? Quis facere minima magni minus molestias exercitationem vel, odio alias, ratione iste maxime repellat repudiandae dicta maiores excepturi perspiciatis molestiae totam ipsum sint dolor ipsa cumque. Numquam quibusdam aut vel maxime officiis nostrum accusamus suscipit odio, necessitatibus eum.</p>
-			</div>
-			<div class="col-12 mt-3">
-				<h4 class="mb-0">Record Audio</h4>
-				<p>Record audio to convert to text in the editor below.</p>
-				<div id="controls" class="d-flex align-items-center justify-content-between">
-					<div>
-						<button id="startBtn1" data-sr_no="1" data-editor_name="editor" class="startBtn">Start Recording</button>
-						<button id="stopBtn1" data-sr_no="1" class="btn-danger stopBtn" style="display: none;">Stop Recording</button>
-						<button id="resetBtn1" data-sr_no="1" class="btn-danger resetBtn" style="display: none;">Reset Text</button>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui vero eaque obcaecati ab esse mollitia, reiciendis sed nihil assumenda quos. Sed magnam blanditiis laudantium enim nisi deleniti itaque molestiae quia omnis voluptatum, suscipit neque a eaque dolores reprehenderit perspiciatis doloribus veniam maxime, eum earum officiis commodi facere architecto. Illo, corporis.</p>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint repellendus, aliquam ex laudantium maxime a dignissimos similique eius fuga ut ullam fugit sapiente repudiandae libero atque, cumque laborum inventore numquam eos odit perferendis. Nihil facilis porro, natus dolore eos nisi? Inventore, in? Quis facere minima magni minus molestias exercitationem vel, odio alias, ratione iste maxime repellat repudiandae dicta maiores excepturi perspiciatis molestiae totam ipsum sint dolor ipsa cumque. Numquam quibusdam aut vel maxime officiis nostrum accusamus suscipit odio, necessitatibus eum.</p>
+				</div>
+				<div class="col-12 mt-3">
+					<h4 class="mb-0">Record Audio</h4>
+					<p>Record audio to convert to text in the editor below.</p>
+					<div id="controls" class="d-flex align-items-center justify-content-between">
+						<div>
+							<button data-class="execution" id="startBtn1" data-sr_no="1" data-editor_name="editor" class="startBtn">Start Recording</button>
+							<button data-class="execution" id="stopBtn1" data-sr_no="1" class="btn-danger stopBtn" style="display: none;">Stop Recording</button>
+							<button data-class="execution" id="resetBtn1" data-sr_no="1" class="btn-danger resetBtn" style="display: none;">Reset Text</button>
+						</div>
+						<div class="d-flex align-items-center">
+							<i class="zmdi zmdi-circle mr-2"></i>
+							<div id="timer1">00:00:00</div>
+						</div>
 					</div>
-					<div class="d-flex align-items-center">
-						<i class="zmdi zmdi-circle mr-2"></i>
-						<div id="timer1">00:00:00</div>
+					<div class="mt-3">
+						<div id="editor"><?php echo $book['execution'] ?? '' ?></div>
+					</div>
+					<input type="hidden" name="execution" id="contentInput" data-class="execution">
+					<div class="text-right px-3 mt-3 w-100">
+						<button type="submit" data-class="execution" id="save" class="btn btn-primary"><i class="fas fa-save mr-2"></i>Save</button>
 					</div>
 				</div>
-				<div class="mt-3">
-					<div id="editor"></div>
-				</div>
 			</div>
-		</div>
+		</form>
 
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
 		<a href="{{url('/inspiration')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
-		<!-- <a href="{{url('/inspiration/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a> -->
+		<a href="{{url('/conclusion/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 	</div>
 </section>
 @endsection
 @section('insertjavascript')
+@if(session()->has('executionSuccess'))
+<script>
+	Swal.fire({
+		title: 'Success',
+		text: `{{ session('executionSuccess') }}`,
+		icon: 'success',
+		confirmButtonColor: "#66CE2C"
+	})
+</script>
+@endif
+@if(session()->has('nextError'))
+<script>
+	Swal.fire({
+		title: 'Error',
+		text: `{{ session('nextError') }}`,
+		icon: 'error',
+		confirmButtonColor: "#66CE2C"
+	})
+</script>
+@endif
 <script>
 	$('.sidenav  li:nth-of-type(12)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
+		var scrollableDiv = document.getElementById("navAccordion");
+		scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
+
+		
+		$("#excutionForm").submit(function(e) {
+			e.preventDefault();
+			validation = validateForm();
+			if (validation) {
+				var content = CKEDITOR.instances['editor'].getData();
+				if (content == '') {
+					Swal.fire({
+						title: 'Empty Data',
+						text: "Please write something in Text Editor to save!",
+						icon: 'error',
+						confirmButtonColor: "#66CE2C"
+					})
+					return;
+				}
+				$('#contentInput').val(content);
+				$("#excutionForm")[0].submit();
+			} else {
+				Swal.fire({
+					title: 'Missing Fields',
+					text: "Some fields are missing!",
+					icon: 'error',
+					confirmButtonColor: "#66CE2C"
+				})
+			}
+		})
+
+		function validateForm() {
+			let errorCount = 0;
+			$("form#excutionForm :input").each(function() {
+				let val = $(this).val();
+				if (val == '' && $(this).attr('data-class') !== 'execution') {
+					errorCount++
+					$(this).css('border', '1px solid red');
+				} else {
+					$(this).css('border', 'none');
+				}
+			});
+			if (errorCount > 0) {
+				return false;
+			}
+			return true;
+		}
+
 		CKEDITOR.replace('editor', {
 			height: '400px',
 			removePlugins: 'elementspath'
