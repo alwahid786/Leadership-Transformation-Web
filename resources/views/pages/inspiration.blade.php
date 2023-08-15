@@ -94,9 +94,9 @@
 					<p>Record audio to convert to text in the editor below.</p>
 					<div id="controls" class="d-flex align-items-center justify-content-between">
 						<div>
-							<button data-class="inspiration" id="startBtn1" data-sr_no="1" data-editor_name="editor" class="startBtn">Start Recording</button>
-							<button data-class="inspiration" id="stopBtn1" data-sr_no="1" class="btn-danger stopBtn" style="display: none;">Stop Recording</button>
-							<button data-class="inspiration" id="resetBtn1" data-sr_no="1" class="btn-danger resetBtn" style="display: none;">Reset Text</button>
+							<button data-class="inspiration" type="button" id="startBtn1" data-sr_no="1" data-editor_name="editor" class="startBtn">Start Recording</button>
+							<button data-class="inspiration" type="button" id="stopBtn1" data-sr_no="1" class="btn-danger stopBtn" style="display: none;">Stop Recording</button>
+							<button data-class="inspiration" type="button" id="resetBtn1" data-sr_no="1" class="btn-danger resetBtn" style="display: none;">Reset Text</button>
 						</div>
 						<div class="d-flex align-items-center">
 							<i class="zmdi zmdi-circle mr-2"></i>
@@ -149,7 +149,7 @@
 	$(document).ready(function() {
 		var scrollableDiv = document.getElementById("navAccordion");
 		scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
-		
+		 type="button"
 		$("#inspirationForm").submit(function(e) {
 			e.preventDefault();
 			validation = validateForm();

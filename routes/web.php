@@ -66,8 +66,4 @@ Route::middleware('auth')->group(function () {
     Route::post('/vision/submit', [ContentController::class, 'submitVision'])->name('submitVision');
     Route::post('/inspiration/submit', [ContentController::class, 'submitInspiration'])->name('submitInspiration');
     Route::post('/execution/submit', [ContentController::class, 'submitExecution'])->name('submitExecution');
-
-    Route::get('/pdf', function () {
-        return view('pages.pdf');
-    });
 });
