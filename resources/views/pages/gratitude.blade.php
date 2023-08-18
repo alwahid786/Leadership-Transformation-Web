@@ -147,6 +147,7 @@
 						</div>
 					</div>
 					<div class="mt-3">
+					<div id="preview"></div>
 						<div id="editor"><?php echo $book['gratitude'] ?? '' ?></div>
 					</div>
 				</div>
@@ -264,8 +265,10 @@
 
 		// handle result event
 		recognition.onresult = function(event) {
+			transcriptionField = document.getElementById('preview');
 			let interimTranscription = '';
 			for (let i = event.resultIndex; i < event.results.length; i++) {
+				
 				let transcript = event.results[i][0].transcript;
 				if (event.results[i].isFinal) {
 					var editor = CKEDITOR.instances[editorName];
@@ -280,13 +283,14 @@
 					// editor.setData('', { selectionStart: element, selectionEnd: element });
 					editor.insertText(transcript, element);
 					// CKEDITOR.instances.transcription.insertHtml(transcript);
-					//   transcription += transcript + ' ';
+					  transcription =  '';
 				}
-				//    else {
-				//       interimTranscription += transcript;
-				//   }
+				   else {
+				      interimTranscription += transcript;
+				  }
+				  
+			  transcriptionField.innerHTML = transcription + interimTranscription;
 			}
-			//   transcriptionField.value = transcription + interimTranscription;
 
 		};
 
