@@ -60,7 +60,7 @@
 					title: 'Empty Fields',
 					text: 'All fields are required',
 					icon: 'error',
-					confirmButtonColor: "#66CE2C"
+					confirmButtonColor: "#6dabe4"
 				})
 				return;
 			}
@@ -86,7 +86,7 @@
 							title: 'Error',
 							text: dataResult.message,
 							icon: 'error',
-							confirmButtonColor: "#66CE2C"
+							confirmButtonColor: "#6dabe4"
 						})
 						return;
 					} else {
@@ -103,6 +103,7 @@
 							10: 'vision',
 							11: 'inspiration',
 							11: 'execution',
+							12: 'conclusion'
 						};
 						url = dataResult.data.page_number;
 						if (routeMapping.hasOwnProperty(url)) {
@@ -118,7 +119,7 @@
 						title: 'Validation Error',
 						text: jqXHR.responseJSON.message,
 						icon: 'error',
-						confirmButtonColor: "#66CE2C"
+						confirmButtonColor: "#6dabe4"
 					})
 				}
 			});

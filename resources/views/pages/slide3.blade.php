@@ -37,7 +37,7 @@
 	}
 
 	.navBtns {
-		border: 1px solid #66CE2C;
+		border: 1px solid #6dabe4;
 		padding: 5px 0px;
 		border-radius: 5px;
 		width: 150px;
@@ -47,7 +47,7 @@
 	}
 
 	.buttonSection a:hover {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		color: white;
 	}
 </style>

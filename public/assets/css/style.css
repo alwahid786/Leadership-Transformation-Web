@@ -11723,7 +11723,7 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #66CE2C;
+  color: #6dabe4;
 }
 
 a:hover,
@@ -11980,8 +11980,8 @@ h5,
 }
 
 .btn.btn-primary {
-  background: #66CE2C !important;
-  border: 1px solid #66CE2C !important;
+  background: #6dabe4 !important;
+  border: 1px solid #6dabe4 !important;
   color: #fff !important;
 }
 
@@ -12004,7 +12004,7 @@ h5,
 }
 
 .text-green {
-  color: #66CE2C;
+  color: #6dabe4;
 }
 
 .otp-inputs {

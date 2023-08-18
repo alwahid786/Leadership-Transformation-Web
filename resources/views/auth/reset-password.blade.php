@@ -49,7 +49,7 @@
 					title: 'Empty Fields',
 					text: 'All fields are required',
 					icon: 'error',
-					confirmButtonColor: "#66CE2C"
+					confirmButtonColor: "#6dabe4"
 				})
 				return;
 			}
@@ -74,7 +74,7 @@
 							title: 'Error',
 							text: dataResult.message,
 							icon: 'error',
-							confirmButtonColor: "#66CE2C"
+							confirmButtonColor: "#6dabe4"
 						})
 						return;
 					} else {
@@ -82,7 +82,7 @@
 							title: 'SUCCESS',
 							text: dataResult.message,
 							icon: 'success',
-							confirmButtonColor: "#66CE2C"
+							confirmButtonColor: "#6dabe4"
 						}).then((result) => {
 							window.location.href = `{{url('/login')}}`;
 						});
@@ -93,7 +93,7 @@
 						title: 'Validation Error',
 						text: jqXHR.responseJSON.message,
 						icon: 'error',
-						confirmButtonColor: "#66CE2C"
+						confirmButtonColor: "#6dabe4"
 					})
 				}
 			});

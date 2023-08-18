@@ -216,7 +216,7 @@
         }
 
         .sidenav .nav-item.active {
-            background: #66CE2C;
+            background: #6dabe4;
             border-radius: 10px;
         }
 
@@ -239,7 +239,7 @@
         }
 
         .sidenav .nav-item:hover {
-            background: #66CE2C;
+            background: #6dabe4;
             border-radius: 10px;
         }
 
@@ -413,7 +413,7 @@
     }
 
     li i {
-        color: #66CE2C;
+        color: #6dabe4;
     }
 
     li.active i {
@@ -425,11 +425,11 @@
     }
 
     .navbar-toggler i {
-        color: #66CE2C;
+        color: #6dabe4;
     }
 
     .dropdown-menu .fa-sign-out {
-        color: #66CE2C;
+        color: #6dabe4;
     }
 
     .dropdown-menu .logout {
@@ -442,7 +442,7 @@
     }
 
     .logout-dropdown .dropdown-item:hover {
-        background-color: #66CE2C;
+        background-color: #6dabe4;
         color: white;
     }
 
@@ -458,11 +458,11 @@
         align-items: center;
         justify-content: center;
         background: white;
-        color: #66CE2C;
+        color: #6dabe4;
         font-weight: 600;
         bottom: 0px;
         right: 5px;
-        border: 1px solid #66CE2C;
+        border: 1px solid #6dabe4;
         line-height: 1.5px;
     }
 </style>
@@ -474,7 +474,7 @@ $page = auth()->user()->page_number;
         <!-- <img style="width: 100%; height:100%; object-fit:contain;" src="{{asset('assets/images/site-logo.png')}}" alt="Admin logo"> -->
         <div class="ml-3">
             <span class="text-secondary" style="font-size:12px; line-height:0.5;">TRANSFORMATIONAL</span>
-            <span style="color: #66CE2C;display: block; font-size:25px; font-weight: 600; line-height:0.4">LEADERSHIP</span>
+            <span style="color: #6dabe4;display: block; font-size:18px; font-weight: 600; line-height:0.4">LEADERSHIP BUILDER</span>
         </div>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -506,16 +506,16 @@ $page = auth()->user()->page_number;
                     Cover Page
                 </a>
             </li>
-            <li class="nav-item my-1  <?php if ($page < 1) echo "disabled-item my-0"; ?>">
+            {{--<li class="nav-item my-1  <?php if ($page < 1) echo "disabled-item my-0"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 1) echo "style='pointer-events: none'"; ?> href="{{url('slide/1')}}">
-                    <div class="position-relative">
-                        <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
-                        <div class="position-absolute numberingSlideDiv">
-                            1
-                        </div>
-                    </div>
-                    Slide 01
-                </a>
+            <div class="position-relative">
+                <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
+                <div class="position-absolute numberingSlideDiv">
+                    1
+                </div>
+            </div>
+            Slide 01
+            </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 2) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 2) echo "style='pointer-events: none'"; ?> href="{{url('slide/2')}}">
@@ -571,7 +571,7 @@ $page = auth()->user()->page_number;
                     </div>
                     Slide 06
                 </a>
-            </li>
+            </li>--}}
             <li class="nav-item my-1 <?php if ($page < 7) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 7) echo "style='pointer-events: none'"; ?> href="{{url('gratitude')}}">
                     <i style="font-size: 22px;" class="fas fa-heart mr-3"></i>
@@ -585,21 +585,21 @@ $page = auth()->user()->page_number;
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 9) echo "disabled-item"; ?>">
-                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 9) echo "style='pointer-events: none'"; ?> href="{{url('vision')}}">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 9) echo "style='pointer-events: none'"; ?> href="{{url('see-it')}}">
                     <i style="font-size: 22px;" class="fas fa-binoculars mr-3"></i>
-                    Vision
+                    See It!
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 10) echo "disabled-item"; ?>">
-                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 10) echo "style='pointer-events: none'"; ?> href="{{url('inspiration')}}">
-                    <i style="font-size: 22px;" class="fas fa-lightbulb mr-3"></i>
-                    Inspiration
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 10) echo "style='pointer-events: none'"; ?> href="{{url('say-it')}}">
+                    <i style="font-size: 22px;" class="fas fa-microphone mr-3"></i>
+                    Say It!
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 11) echo "disabled-item"; ?>">
-                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 11) echo "style='pointer-events: none'"; ?> href="{{url('execution')}}">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 11) echo "style='pointer-events: none'"; ?> href="{{url('live-it')}}">
                     <i style="font-size: 22px;" class="fas fa-play mr-3"></i>
-                    Execution
+                    Live It!
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 12) echo "disabled-item"; ?>">

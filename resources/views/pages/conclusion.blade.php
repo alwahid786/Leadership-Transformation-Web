@@ -37,7 +37,7 @@
 	}
 
 	.navBtns {
-		border: 1px solid #66CE2C;
+		border: 1px solid #6dabe4;
 		padding: 5px 0px;
 		border-radius: 5px;
 		width: 150px;
@@ -47,12 +47,12 @@
 	}
 
 	.buttonSection a:hover {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		color: white;
 	}
 
 	.startBtn {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		border-radius: 5px;
 		padding: 5px 15px;
 		border: none;
@@ -99,20 +99,20 @@
 				<div class="confetti-img mx-auto">
 					<img src="{{asset('assets/images/confetti.png')}}" alt="">
 				</div>
-				<p class="px-5 py-3 text-center" style="font-size: 18px;">WOOHOO! You made it to the finish line. That’s an accomplishment few people will know. I’m grateful to you for allowing me to provide a little help in your journey. Now you can convert it to "PDF" and make a "Book" out of it.</p>
+				<p class="px-5 py-3 text-center" style="font-size: 18px;">WOOHOO! You’ve already taken the next step toward improving as a Transformational Leader! I’m grateful to you for allowing me to provide a little help in your journey. Press the button and receive a PDF of this presentation, your entries and 100 days of Leadership Quotes.</p>
 			</div>
 			<button style="font-size: 18px;" id="createPdf" class="btn btn-primary mx-auto"><i class="fas fa-file-pdf mr-2"></i>Convert to PDF</button>
 		</div>
 
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
-		<a href="{{url('/execution')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
+		<a href="{{url('/live-it')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
 	</div>
 </section>
 @endsection
 @section('insertjavascript')
 <script>
-	$('.sidenav  li:nth-of-type(13)').addClass('active');
+	$('.sidenav  li:nth-of-type(7)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {

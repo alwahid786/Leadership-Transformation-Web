@@ -13,6 +13,11 @@ use App\Mail\OtpMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
+use Webklex\PDFMerger\Facades\PDFMergerFacade as PDFMerger;
+use setasign\Fpdi\Fpdi;
+use Illuminate\Support\Facades\View;
+use TCPDF;
+use Dompdf\Dompdf;
 
 class ContentController extends Controller
 {
@@ -45,12 +50,18 @@ class ContentController extends Controller
     {
         $loginUserId = Auth::user()->id;
         $user = User::find($loginUserId);
+        // If Coming From Cover Page
+        $book = Book::where('user_id', $loginUserId)->first('designed_for');
+        if ($book == null || empty($book)) {
+            return redirect()->back()->withErrors('Please add proper data first.');
+        }
+        $book = Book::where('user_id', $loginUserId)->first();
 
         if ($user->page_number >= 7) {
-            return view('pages.gratitude');
+            return view('pages.gratitude', compact('book'));
         } else {
             User::where('id', $loginUserId)->update(['page_number' => 7]);
-            return redirect('/gratitude');
+            return redirect('/gratitude', compact('book'));
         }
     }
 
@@ -63,11 +74,13 @@ class ContentController extends Controller
         if ($book->gratitude == '' || $book->gratitude == null) {
             return redirect()->back()->with('nextError', 'Please insert and save Gratitude first.');
         }
+        $book = Book::where('user_id', $loginUserId)->first();
+
         if ($user->page_number >= 8) {
-            return view('pages.wow');
+            return view('pages.wow', compact('book'));
         } else {
             User::where('id', $loginUserId)->update(['page_number' => 8]);
-            return redirect('/wow');
+            return redirect('/wow', compact('book'));
         }
     }
 
@@ -80,11 +93,13 @@ class ContentController extends Controller
         if ($book->wow == '' || $book->wow == null) {
             return redirect()->back()->with('nextError', 'Please insert and save Wow first.');
         }
+        $book = Book::where('user_id', $loginUserId)->first();
+
         if ($user->page_number >= 9) {
-            return view('pages.vision');
+            return view('pages.vision', compact('book'));
         } else {
             User::where('id', $loginUserId)->update(['page_number' => 9]);
-            return redirect('/vision');
+            return redirect('/vision', compact('book'));
         }
     }
 
@@ -97,11 +112,13 @@ class ContentController extends Controller
         if ($book->vision == '' || $book->vision == null) {
             return redirect()->back()->with('nextError', 'Please insert and save Vision first.');
         }
+        $book = Book::where('user_id', $loginUserId)->first();
+
         if ($user->page_number >= 10) {
-            return view('pages.inspiration');
+            return view('pages.inspiration', compact('book'));
         } else {
             User::where('id', $loginUserId)->update(['page_number' => 10]);
-            return redirect('/inspiration');
+            return redirect('/inspiration', compact('book'));
         }
     }
 
@@ -114,11 +131,13 @@ class ContentController extends Controller
         if ($book->inspiration == '' || $book->inspiration == null) {
             return redirect()->back()->with('nextError', 'Please insert and save Inspiration first.');
         }
+        $book = Book::where('user_id', $loginUserId)->first();
+
         if ($user->page_number >= 11) {
-            return view('pages.execution');
+            return view('pages.execution', compact('book'));
         } else {
             User::where('id', $loginUserId)->update(['page_number' => 11]);
-            return redirect('/execution');
+            return redirect('/execution', compact('book'));
         }
     }
 
@@ -263,19 +282,173 @@ class ContentController extends Controller
     }
 
     // Create A PDF Book Function 
+    // public function createPdf()
+    // {
+    //     $loginUserId = Auth::user()->id;
+    //     $book = Book::where('user_id', $loginUserId)->first();
+
+    //     // Load PDFs
+    //     $wowPdf = PDF::loadView('pages.wow-pdf', compact('book'));
+    //     $gratitudePdf = PDF::loadView('pages.gratitude-pdf', compact('book'));
+    //     $seePdf = PDF::loadView('pages.see-it-pdf', compact('book'));
+    //     $sayPdf = PDF::loadView('pages.say-it-pdf', compact('book'));
+    //     $livePdf = PDF::loadView('pages.live-it-pdf', compact('book'));
+
+    //     // Set PDF sizes
+    //     $pdfSize = [0, 0, 500, 800];
+    //     $wowPdf->setPaper($pdfSize, 'portrait');
+    //     $gratitudePdf->setPaper($pdfSize, 'portrait');
+    //     $seePdf->setPaper($pdfSize, 'portrait');
+    //     $sayPdf->setPaper($pdfSize, 'portrait');
+    //     $livePdf->setPaper($pdfSize, 'portrait');
+
+    //     // Save PDF Files
+    //     $timestamp = time();
+    //     $pdfDirectory = public_path('assets/pdf/');
+    //     $wow = $timestamp . 'wow.pdf';
+    //     $gratitude = $timestamp . 'gratitude.pdf';
+    //     $see = $timestamp . 'see.pdf';
+    //     $say = $timestamp . 'say.pdf';
+    //     $live = $timestamp . 'live.pdf';
+
+    //     $wowPdf->save($pdfDirectory . $wow);
+    //     $gratitudePdf->save($pdfDirectory . $gratitude);
+    //     $seePdf->save($pdfDirectory . $see);
+    //     $sayPdf->save($pdfDirectory . $say);
+    //     $livePdf->save($pdfDirectory . $live);
+
+    //     // Define PDF paths
+    //     $pdfsToMerge = [
+    //         public_path('assets/pdf/pdf-1.pdf'),
+    //         $pdfDirectory . $wow,
+    //         public_path('assets/pdf/pdf-2.pdf'),
+    //         $pdfDirectory . $gratitude,
+    //         public_path('assets/pdf/pdf-3.pdf'),
+    //         public_path('assets/pdf/pdf-4.pdf'),
+    //         $pdfDirectory . $see,
+    //         public_path('assets/pdf/pdf-5.pdf'),
+    //         $pdfDirectory . $say,
+    //         public_path('assets/pdf/pdf-6.pdf'),
+    //         $pdfDirectory . $live,
+    //         public_path('assets/pdf/pdf-7.pdf'),
+    //     ];
+
+    //     $finalPdf = 'Transformational Leadership ' . $timestamp . '.pdf';
+    //     $mergedPdfPath = $pdfDirectory . $finalPdf;
+
+    //     // Merge PDFs
+    //     $pdf = PDFMerger::init();
+
+    //     foreach ($pdfsToMerge as $pdfPath) {
+    //         $pdf->addPDF($pdfPath, 'all');
+    //     }
+    //     $pdf->merge();
+    //     $pdf->save($mergedPdfPath);
+
+    //     // Set the response content-type to PDF
+    //     $headers = [
+    //         'Content-Type' => 'application/pdf',
+    //         'Content-Disposition' => 'inline; filename="Transformational Leadership.pdf"',
+    //     ];
+
+    //     // Return the merged PDF in a new tab
+    //     return response()->file($mergedPdfPath, $headers);
+    // }
+
+    // public function createPdf()
+    // {
+    //     $loginUserId = Auth::user()->id;
+    //     $book = Book::where('user_id', $loginUserId)->first();
+    //     $pdf = PDF::loadView('pages.pdf', compact('book')); // load view and pass data
+    //     $pdf->setPaper([0, 0, 500, 800], 'portrait');
+    //     // Set the response content-type to PDF
+    //     $headers = [
+    //         'Content-Type' => 'application/pdf',
+    //         'Content-Disposition' => 'inline; filename=' . 'Transformational Leadership' . '".pdf"'
+    //     ];
+
+    //     // Return the rendered PDF in a new tab
+    //     return response($pdf->stream(), 200, $headers);
+    // }
+
+    // Working One 
+    // public function createPdf()
+    // {
+    //     $loginUserId = Auth::user()->id;
+    //     $book = Book::where('user_id', $loginUserId)->first();
+    //     // Load the existing PDF
+    //     $pdf = new Fpdi();
+    //     $pageCount = $pdf->setSourceFile(public_path('assets/pdf/main-pdf.pdf'));
+
+    //     // Iterate through pages and add dynamic content
+    //     for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
+    //         $templateId = $pdf->importPage($pageNo);
+    //         $pdf->addPage();
+    //         $pdf->useTemplate($templateId);
+
+    //         // Check if this is the specific page after which you want to add content
+    //         if ($pageNo == 2) {
+    //             $pdf->AddPage();
+    //             $pdf->SetFont('Arial', 'B', 12);
+    //             $pdf->SetXY(50, 50); // Set position for text
+    //             $pdf->Cell(0, 10, $book->gratitude, 0, 0, 'L');
+    //         }
+    //     }
+
+    //     // Output the modified PDF
+    //     $outputPath = storage_path('app/public/' . time() . 'generated.pdf');
+    //     $pdf->Output($outputPath, 'F');
+
+    //     return response()->download($outputPath, 'generated.pdf');
+    // }
     public function createPdf()
     {
         $loginUserId = Auth::user()->id;
         $book = Book::where('user_id', $loginUserId)->first();
-        // create PDF 
-        $pdf = PDF::loadView('pages.pdf', compact('book'));
-        $pdf->setPaper([0, 0, 500, 800], 'portrait');
-        // Set the response content-type to PDF
-        $headers = [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename=' . 'Transformational Leadership' . '".pdf"'
-        ];
-        // Return the rendered PDF in a new tab
-        return response($pdf->stream(), 200, $headers);
+        // dd($book->gratitude);
+        // Initialize FPDI
+        $pdf = new Fpdi();
+
+        // Load the existing PDF
+        $pageCount = $pdf->setSourceFile(public_path('assets/pdf/main-pdf.pdf'));
+
+        // Initialize TCPDF for rendering HTML
+        $tcpdf = new TCPDF();
+
+        // Iterate through pages and add dynamic content
+        for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
+            $templateId = $pdf->importPage($pageNo);
+            $pdf->AddPage();
+            $pdf->useTemplate($templateId);
+
+            // Check if this is the specific page after which you want to add content
+            if ($pageNo == 2) {
+                // $pdf->AddPage();
+
+                // // Set the position for HTML content
+                // $htmlContent = $book->gratitude;
+                // // $htmlContent = View::make('pages.pdf', ['book' => $book])->render();
+                // $tcpdf->AddPage();
+                // $tcpdf->writeHTML($htmlContent);
+
+                $pdf->AddPage();
+                $pdf->SetFont('Arial', 'B', 12);
+                $pdf->SetXY(50, 50); // Set position for text
+                $pdf->Cell(0, 10, View::make('pages.pdf', ['book' => $book])->render(), 0, 0, 'L');
+            }
+        }
+
+        // Output the modified PDF
+        $outputPath = storage_path('app/public/' . time() . 'generated.pdf');
+        $pdf->Output($outputPath, 'F');
+
+        return response()->download($outputPath, 'generated.pdf');
+    }
+
+    public function viewPdf()
+    {
+        $loginUserId = Auth::user()->id;
+        $book = Book::where('user_id', $loginUserId)->first();
+        return view('pages.pdf', compact('book'));
     }
 }

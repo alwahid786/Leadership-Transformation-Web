@@ -37,7 +37,7 @@
 	}
 
 	.navBtns {
-		border: 1px solid #66CE2C;
+		border: 1px solid #6dabe4;
 		padding: 5px 0px;
 		border-radius: 5px;
 		width: 150px;
@@ -47,12 +47,12 @@
 	}
 
 	.buttonSection a:hover {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		color: white;
 	}
 
 	.startBtn {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		border-radius: 5px;
 		padding: 5px 15px;
 		border: none;
@@ -82,12 +82,55 @@
 			@csrf
 			<div class="row">
 				<div class="col-12 text-center">
-					<h3 class="headingTitle">Gratitude</h3>
+					<h3 class="headingTitle mb-0">Gratitude</h3>
+					<h5>Taken from the book "Gratitude Stories From Our Hearts"</h5>
 				</div>
 				<div class="col-12 mt-3">
-
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui vero eaque obcaecati ab esse mollitia, reiciendis sed nihil assumenda quos. Sed magnam blanditiis laudantium enim nisi deleniti itaque molestiae quia omnis voluptatum, suscipit neque a eaque dolores reprehenderit perspiciatis doloribus veniam maxime, eum earum officiis commodi facere architecto. Illo, corporis.</p>
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint repellendus, aliquam ex laudantium maxime a dignissimos similique eius fuga ut ullam fugit sapiente repudiandae libero atque, cumque laborum inventore numquam eos odit perferendis. Nihil facilis porro, natus dolore eos nisi? Inventore, in? Quis facere minima magni minus molestias exercitationem vel, odio alias, ratione iste maxime repellat repudiandae dicta maiores excepturi perspiciatis molestiae totam ipsum sint dolor ipsa cumque. Numquam quibusdam aut vel maxime officiis nostrum accusamus suscipit odio, necessitatibus eum.</p>
+					<p>My gratitude journey started at the Entrepreneur’s Organization Global Leadership Conference
+						in Bangkok, Thailand. A smart lady and now friend by the name of Gina Mollicone- Long was
+						speaking during a break-out session. Gina is a Process Control Engineer by education and a
+						trainer of Performance Coaches professionally. I was lucky to be in the audience when she
+						talked about the role of energy and emotion in human performance. During her lecture, she
+						proposed that humans perform at their highest level when they express or experience
+						gratitude, and at their lowest level when they express or experience fear or shame. Little did I
+						know that thought would completely change my life.
+					</p>
+					<p>When we returned to the United States, I drove myself to our local Home Depot and bought a
+						small, galvanized pail. It wasn’t heavy but it’s noticeable, it’s shiny, not easy to carry in your
+						pocket and you can’t really hide it, the pail is about eight inches tall and eight inches across. I
+						wrote the word “gratitude” on a piece of paper and dropped it the pail. I carried the pail
+						everywhere with me. That pail became a physical reminder to me to be intentional about my
+						gratitude practice. It sat in the passenger seat of my car, in my truck, on the desk in my home
+						office, on the credenza in my actual office, and beside the TV when Sunday movies came on. I
+						did this for six months. The pail was my physical reminder to practice gratitude The interesting
+						thing about gratitude, is the more you practice gratitude the more grateful you become. After
+						six months or so I made the decision, I was going to share my newfound gratitude with my
+						Company Leadership Team.
+					</p>
+					<p>
+						We started a weekly Gratitude Exercise called One Good Thing. Every Monday at nine in the
+						morning, each member was given one minute or two to share One Good Thing. One Good Thing
+						is a share of whatever a person is most Grateful from their business, family, or personal life
+						from the previous week. It was awkward at first and took a while before people were
+						comfortable enough to really share, but once they did, their stories were eye opening.
+					</p>
+					<p>
+						Two stories stand out for me. One of my teammates was a parent to a daughter who loved
+						soccer. When it was his turn to speak, he said that he was grateful that his daughter finally
+						introduced him to her friends. You see, my teammate had been attending his daughter’s soccer
+						games week in and week out, but his daughter never acknowledged that he was
+						there. Until one day, she did. That tiny moment made my teammates’ week.
+					</p>
+					<p>
+						Another teammate was a new grandmother. We all knew that her daughter was pregnant, and
+						that they were all excited for the baby. What we didn’t know was that the baby had been
+						diagnosed with a congenital defect that increased his risk for not surviving to term. If he did
+						survive to term, the doctor said that it would be likely that he would be stillborn. If he wasn’t
+						stillborn, he would most likely die immediately after birth. When it was her turn to speak, she
+						said that she was grateful that her grandson was born. Though he lived only an hour, she was
+						grateful to meet her grandson, hold him and tell him she loved him. I thought I was going to
+						teach my teammates about the power of Gratitude, and I learned so much more than I taught.
+					</p>
 				</div>
 				<div class="col-12 mt-3">
 					<h4 class="mb-0">Record Audio</h4>
@@ -116,7 +159,7 @@
 
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
-		<a href="{{url('/slide/6')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
+		<a href="{{url('/cover')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
 		<a href="{{url('/wow/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 	</div>
 </section>
@@ -128,7 +171,7 @@
 		title: 'Success',
 		text: `{{ session('gratitudeSuccess') }}`,
 		icon: 'success',
-		confirmButtonColor: "#66CE2C"
+		confirmButtonColor: "#6dabe4"
 	})
 </script>
 @endif
@@ -138,12 +181,12 @@
 		title: 'Error',
 		text: `{{ session('nextError') }}`,
 		icon: 'error',
-		confirmButtonColor: "#66CE2C"
+		confirmButtonColor: "#6dabe4"
 	})
 </script>
 @endif
 <script>
-	$('.sidenav  li:nth-of-type(8)').addClass('active');
+	$('.sidenav  li:nth-of-type(2)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
@@ -160,7 +203,7 @@
 						title: 'Empty Data',
 						text: "Please write something in Text Editor to save!",
 						icon: 'error',
-						confirmButtonColor: "#66CE2C"
+						confirmButtonColor: "#6dabe4"
 					})
 					return;
 				}
@@ -171,7 +214,7 @@
 					title: 'Missing Fields',
 					text: "Some fields are missing!",
 					icon: 'error',
-					confirmButtonColor: "#66CE2C"
+					confirmButtonColor: "#6dabe4"
 				})
 			}
 		})
@@ -305,7 +348,7 @@
 				text: "You won't be able to revert this!",
 				icon: 'warning',
 				showCancelButton: true,
-				confirmButtonColor: '#66CE2C',
+				confirmButtonColor: '#6dabe4',
 				cancelButtonColor: '#d33',
 				confirmButtonText: 'Yes, reset it!'
 			}).then((result) => {

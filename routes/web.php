@@ -46,18 +46,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/cover', [ContentController::class, 'coverPage'])->name('coverPage');
     Route::get('/gratitude', [ContentController::class, 'gratitudePage'])->name('gratitudePage');
     Route::get('/wow', [ContentController::class, 'wowPage'])->name('wowPage');
-    Route::get('/vision', [ContentController::class, 'visionPage'])->name('visionPage');
-    Route::get('/inspiration', [ContentController::class, 'inspirationPage'])->name('inspirationPage');
-    Route::get('/execution', [ContentController::class, 'executionPage'])->name('executionPage');
+    Route::get('/see-it', [ContentController::class, 'visionPage'])->name('visionPage');
+    Route::get('/say-it', [ContentController::class, 'inspirationPage'])->name('inspirationPage');
+    Route::get('/live-it', [ContentController::class, 'executionPage'])->name('executionPage');
     Route::get('/conclusion', [ContentController::class, 'conclusionPage'])->name('conclusionPage');
     Route::get('/slide/{slideNumber}', [ContentController::class, 'showSlide'])->name('slide');
     Route::get('/gratitude/con', [ContentController::class, 'gratitudeFunction'])->name('gratitudeFunction');
     Route::get('/wow/con', [ContentController::class, 'wowFunction'])->name('wowFunction');
-    Route::get('/vision/con', [ContentController::class, 'visionFunction'])->name('visionFunction');
-    Route::get('/inspiration/con', [ContentController::class, 'inspirationFunction'])->name('inspirationFunction');
-    Route::get('/execution/con', [ContentController::class, 'executionFunction'])->name('executionFunction');
+    Route::get('/see-it/con', [ContentController::class, 'visionFunction'])->name('visionFunction');
+    Route::get('/say-it/con', [ContentController::class, 'inspirationFunction'])->name('inspirationFunction');
+    Route::get('/live-it/con', [ContentController::class, 'executionFunction'])->name('executionFunction');
     Route::get('/conclusion/con', [ContentController::class, 'conclusionFunction'])->name('conclusionFunction');
     Route::get('/create-pdf', [ContentController::class, 'createPdf'])->name('createPdf');
+    Route::get('/view-pdf', [ContentController::class, 'viewPdf'])->name('viewPdf');
 
     // Submit Forms 
     Route::post('/cover/submit', [ContentController::class, 'submitCover'])->name('submitCover');

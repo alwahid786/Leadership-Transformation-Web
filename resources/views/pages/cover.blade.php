@@ -37,7 +37,7 @@
 	}
 
 	.navBtns {
-		border: 1px solid #66CE2C;
+		border: 1px solid #6dabe4;
 		padding: 5px 0px;
 		border-radius: 5px;
 		width: 150px;
@@ -47,7 +47,7 @@
 	}
 
 	.buttonSection a:hover {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		color: white;
 	}
 </style>
@@ -86,8 +86,7 @@
 
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
-		<!-- <a href="javascript:void" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a> -->
-		<a href="{{url('/slide/1')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		<a href="{{url('/gratitude/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 	</div>
 </section>
 @endsection
@@ -113,7 +112,7 @@
 					title: 'Empty Fields',
 					text: 'All fields are required',
 					icon: 'error',
-					confirmButtonColor: "#66CE2C"
+					confirmButtonColor: "#6dabe4"
 				})
 				errors--;
 				return;
@@ -140,7 +139,7 @@
 							title: 'Error',
 							text: dataResult.message,
 							icon: 'error',
-							confirmButtonColor: "#66CE2C"
+							confirmButtonColor: "#6dabe4"
 						})
 						return;
 					} else {
@@ -148,7 +147,7 @@
 							title: 'Success',
 							text: dataResult.message,
 							icon: 'success',
-							confirmButtonColor: "#66CE2C"
+							confirmButtonColor: "#6dabe4"
 						})
 					}
 				},
@@ -157,7 +156,7 @@
 						title: 'Validation Error',
 						text: jqXHR.responseJSON.message,
 						icon: 'error',
-						confirmButtonColor: "#66CE2C"
+						confirmButtonColor: "#6dabe4"
 					})
 				}
 			});

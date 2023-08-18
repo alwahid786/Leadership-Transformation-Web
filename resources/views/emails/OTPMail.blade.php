@@ -46,7 +46,7 @@
             font-weight: bold;
             margin-top: 0;
             margin-bottom: 0;
-            color: #66CE2C;
+            color: #6dabe4;
         }
 
         .otp-code h3 {

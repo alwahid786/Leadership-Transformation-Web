@@ -37,7 +37,7 @@
 	}
 
 	.navBtns {
-		border: 1px solid #66CE2C;
+		border: 1px solid #6dabe4;
 		padding: 5px 0px;
 		border-radius: 5px;
 		width: 150px;
@@ -47,12 +47,12 @@
 	}
 
 	.buttonSection a:hover {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		color: white;
 	}
 
 	.startBtn {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		border-radius: 5px;
 		padding: 5px 15px;
 		border: none;
@@ -82,21 +82,43 @@
 			@csrf
 			<div class="row">
 				<div class="col-12 text-center">
-					<h3 class="headingTitle">Vision</h3>
+					<h3 class="headingTitle">See It!</h3>
 				</div>
 				<div class="col-12 mt-3">
-
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui vero eaque obcaecati ab esse mollitia, reiciendis sed nihil assumenda quos. Sed magnam blanditiis laudantium enim nisi deleniti itaque molestiae quia omnis voluptatum, suscipit neque a eaque dolores reprehenderit perspiciatis doloribus veniam maxime, eum earum officiis commodi facere architecto. Illo, corporis.</p>
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint repellendus, aliquam ex laudantium maxime a dignissimos similique eius fuga ut ullam fugit sapiente repudiandae libero atque, cumque laborum inventore numquam eos odit perferendis. Nihil facilis porro, natus dolore eos nisi? Inventore, in? Quis facere minima magni minus molestias exercitationem vel, odio alias, ratione iste maxime repellat repudiandae dicta maiores excepturi perspiciatis molestiae totam ipsum sint dolor ipsa cumque. Numquam quibusdam aut vel maxime officiis nostrum accusamus suscipit odio, necessitatibus eum.</p>
+					<p>
+						Vision in Leadership is a multifaceted concept.
+					</p>
+					<p>
+						<h5 class="mb-0">Own your Vision.</h5> It’s vital to have a clear vision of what you want to achieve. Visualize your
+						goals, imagine every detail - how it looks, smells, and tastes. Seeing your vision is essential for
+						truly believing in its possibility.
+					</p>
+					<p>
+						<h5 class="mb-0">Bill Gates Vision –</h5> “Put a computer on every desk in every home in the World.” Bill Gates,
+						founder and genius behind MicrosoA, set out on a mission to put a computer on every desk in
+						every home across the globe.
+					</p>
+					<p>
+						<h5 class="mb-0">Steve Jobs – User Experience.</h5> The visionary leader of Apple, may not have formally wriEen
+						down his vision statement. However, he was maniacal about craAing an unparalleled user
+						experience. Steve wanted technology to be intuiIve, powerful, and effortlessly accessible.
+					</p>
+					<p>
+						<h5 class="mb-0">See things from the other person’s perspective.</h5> Understanding the power of perspective is
+						crucial when leading others. Adopting the mindset of those you seek to influence will help you
+						cater to their needs and desires. By genuinely seeing things from their point of view, you will be
+						more successful in connecting with and leading them. Remember, their perspective is the one
+						that truly matters.
+					</p>
 				</div>
 				<div class="col-12 mt-3">
 					<h4 class="mb-0">Record Audio</h4>
 					<p>Record audio to convert to text in the editor below.</p>
 					<div id="controls" class="d-flex align-items-center justify-content-between">
 						<div>
-							<button  type="button" data-class="vision" id="startBtn1" data-sr_no="1" data-editor_name="editor" class="startBtn">Start Recording</button>
-							<button  type="button" data-class="vision" id="stopBtn1" data-sr_no="1" class="btn-danger stopBtn" style="display: none;">Stop Recording</button>
-							<button  type="button" data-class="vision" id="resetBtn1" data-sr_no="1" class="btn-danger resetBtn" style="display: none;">Reset Text</button>
+							<button type="button" data-class="vision" id="startBtn1" data-sr_no="1" data-editor_name="editor" class="startBtn">Start Recording</button>
+							<button type="button" data-class="vision" id="stopBtn1" data-sr_no="1" class="btn-danger stopBtn" style="display: none;">Stop Recording</button>
+							<button type="button" data-class="vision" id="resetBtn1" data-sr_no="1" class="btn-danger resetBtn" style="display: none;">Reset Text</button>
 						</div>
 						<div class="d-flex align-items-center">
 							<i class="zmdi zmdi-circle mr-2"></i>
@@ -116,7 +138,7 @@
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
 		<a href="{{url('/wow')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
-		<a href="{{url('/inspiration/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		<a href="{{url('/say-it/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 	</div>
 </section>
 @endsection
@@ -127,7 +149,7 @@
 		title: 'Success',
 		text: `{{ session('visionSuccess') }}`,
 		icon: 'success',
-		confirmButtonColor: "#66CE2C"
+		confirmButtonColor: "#6dabe4"
 	})
 </script>
 @endif
@@ -137,12 +159,12 @@
 		title: 'Error',
 		text: `{{ session('nextError') }}`,
 		icon: 'error',
-		confirmButtonColor: "#66CE2C"
+		confirmButtonColor: "#6dabe4"
 	})
 </script>
 @endif
 <script>
-	$('.sidenav  li:nth-of-type(10)').addClass('active');
+	$('.sidenav  li:nth-of-type(4)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
@@ -159,7 +181,7 @@
 						title: 'Empty Data',
 						text: "Please write something in Text Editor to save!",
 						icon: 'error',
-						confirmButtonColor: "#66CE2C"
+						confirmButtonColor: "#6dabe4"
 					})
 					return;
 				}
@@ -170,7 +192,7 @@
 					title: 'Missing Fields',
 					text: "Some fields are missing!",
 					icon: 'error',
-					confirmButtonColor: "#66CE2C"
+					confirmButtonColor: "#6dabe4"
 				})
 			}
 		})
@@ -303,7 +325,7 @@
 				text: "You won't be able to revert this!",
 				icon: 'warning',
 				showCancelButton: true,
-				confirmButtonColor: '#66CE2C',
+				confirmButtonColor: '#6dabe4',
 				cancelButtonColor: '#d33',
 				confirmButtonText: 'Yes, reset it!'
 			}).then((result) => {

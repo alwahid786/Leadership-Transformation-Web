@@ -37,7 +37,7 @@
 	}
 
 	.navBtns {
-		border: 1px solid #66CE2C;
+		border: 1px solid #6dabe4;
 		padding: 5px 0px;
 		border-radius: 5px;
 		width: 150px;
@@ -47,12 +47,12 @@
 	}
 
 	.buttonSection a:hover {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		color: white;
 	}
 
 	.startBtn {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		border-radius: 5px;
 		padding: 5px 15px;
 		border: none;
@@ -82,12 +82,27 @@
 			@csrf
 			<div class="row">
 				<div class="col-12 text-center">
-					<h3 class="headingTitle">Execution</h3>
+					<h3 class="headingTitle">Live It!</h3>
 				</div>
 				<div class="col-12 mt-3">
-
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui vero eaque obcaecati ab esse mollitia, reiciendis sed nihil assumenda quos. Sed magnam blanditiis laudantium enim nisi deleniti itaque molestiae quia omnis voluptatum, suscipit neque a eaque dolores reprehenderit perspiciatis doloribus veniam maxime, eum earum officiis commodi facere architecto. Illo, corporis.</p>
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint repellendus, aliquam ex laudantium maxime a dignissimos similique eius fuga ut ullam fugit sapiente repudiandae libero atque, cumque laborum inventore numquam eos odit perferendis. Nihil facilis porro, natus dolore eos nisi? Inventore, in? Quis facere minima magni minus molestias exercitationem vel, odio alias, ratione iste maxime repellat repudiandae dicta maiores excepturi perspiciatis molestiae totam ipsum sint dolor ipsa cumque. Numquam quibusdam aut vel maxime officiis nostrum accusamus suscipit odio, necessitatibus eum.</p>
+					<p>
+					<h5 class="mb-0">The Ripple Effect of Your Actions</h5>
+					As a leader, your actions speak far louder than words. In fact the scrams of your actions many
+					times drown out the sound of your words.
+					</p>
+					<p>
+					<h5 class="mb-0">Embrace the Power of Observation</h5>
+					People naturally observe and judge those they look up to, and as a leader, you are constantly
+					under their watchful eyes, someone is always watching. It’s important to recognize that those
+					around you are evaluating you based on what you do, not just what you say.
+					</p>
+					<p>
+					<h5 class="mb-0">Living Your Vision, Living Your Goals</h5>
+					To lead authentically, you must walk the talk. Your vision and goals aren't just words on paper;
+					they are a roadmap for your daily life. Embody your aspirations and lead by example, and you
+					will create a powerful synergy that propels your team and yourself toward success. Let your
+					actions harmonize with your words and watch your influence soar.
+					</p>
 				</div>
 				<div class="col-12 mt-3">
 					<h4 class="mb-0">Record Audio</h4>
@@ -116,7 +131,7 @@
 
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
-		<a href="{{url('/inspiration')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
+		<a href="{{url('/say-it')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
 		<a href="{{url('/conclusion/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 	</div>
 </section>
@@ -128,7 +143,7 @@
 		title: 'Success',
 		text: `{{ session('executionSuccess') }}`,
 		icon: 'success',
-		confirmButtonColor: "#66CE2C"
+		confirmButtonColor: "#6dabe4"
 	})
 </script>
 @endif
@@ -138,12 +153,12 @@
 		title: 'Error',
 		text: `{{ session('nextError') }}`,
 		icon: 'error',
-		confirmButtonColor: "#66CE2C"
+		confirmButtonColor: "#6dabe4"
 	})
 </script>
 @endif
 <script>
-	$('.sidenav  li:nth-of-type(12)').addClass('active');
+	$('.sidenav  li:nth-of-type(6)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
@@ -161,7 +176,7 @@
 						title: 'Empty Data',
 						text: "Please write something in Text Editor to save!",
 						icon: 'error',
-						confirmButtonColor: "#66CE2C"
+						confirmButtonColor: "#6dabe4"
 					})
 					return;
 				}
@@ -172,7 +187,7 @@
 					title: 'Missing Fields',
 					text: "Some fields are missing!",
 					icon: 'error',
-					confirmButtonColor: "#66CE2C"
+					confirmButtonColor: "#6dabe4"
 				})
 			}
 		})
@@ -305,7 +320,7 @@
 				text: "You won't be able to revert this!",
 				icon: 'warning',
 				showCancelButton: true,
-				confirmButtonColor: '#66CE2C',
+				confirmButtonColor: '#6dabe4',
 				cancelButtonColor: '#d33',
 				confirmButtonText: 'Yes, reset it!'
 			}).then((result) => {

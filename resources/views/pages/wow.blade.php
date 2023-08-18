@@ -37,7 +37,7 @@
 	}
 
 	.navBtns {
-		border: 1px solid #66CE2C;
+		border: 1px solid #6dabe4;
 		padding: 5px 0px;
 		border-radius: 5px;
 		width: 150px;
@@ -47,12 +47,12 @@
 	}
 
 	.buttonSection a:hover {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		color: white;
 	}
 
 	.startBtn {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		border-radius: 5px;
 		padding: 5px 15px;
 		border: none;
@@ -85,9 +85,34 @@
 					<h3 class="headingTitle">Wow</h3>
 				</div>
 				<div class="col-12 mt-3">
-
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui vero eaque obcaecati ab esse mollitia, reiciendis sed nihil assumenda quos. Sed magnam blanditiis laudantium enim nisi deleniti itaque molestiae quia omnis voluptatum, suscipit neque a eaque dolores reprehenderit perspiciatis doloribus veniam maxime, eum earum officiis commodi facere architecto. Illo, corporis.</p>
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint repellendus, aliquam ex laudantium maxime a dignissimos similique eius fuga ut ullam fugit sapiente repudiandae libero atque, cumque laborum inventore numquam eos odit perferendis. Nihil facilis porro, natus dolore eos nisi? Inventore, in? Quis facere minima magni minus molestias exercitationem vel, odio alias, ratione iste maxime repellat repudiandae dicta maiores excepturi perspiciatis molestiae totam ipsum sint dolor ipsa cumque. Numquam quibusdam aut vel maxime officiis nostrum accusamus suscipit odio, necessitatibus eum.</p>
+					<p>
+						On a scale of 1 – 10, with 10 being the best, WOW starts at 11 and goes to infinity. It’s the rare
+						air that’s “above and beyond” normal products, services or experiences. You're on a long-haul
+						flight, everyone around you is preparing to go to sleep, and suddenly, a flight attendant appears
+						out of nowhere and asks if you want a mattress. Yes, a mattress! Who would've thought? But
+						that's what happened to me, and let me tell you, it was a game-changing moment, my friends.
+					</p>
+					<p>
+						This amazing flight attendant shows up with a four-inch memory foam mattress, wrapped in
+						luxurious 103-count sheets. I mean, talk about attention to detail! As we continue our journey,
+						we find ourselves in Dubai, the busiest airport in the world. Now, you may think clearing
+						customs there would be a dreaded task, but guess what? We had something even more magical
+						than a Disney World Fast pass – included in our ticket price! We bypassed the never-ending
+						lines and sailed through customs with ease. It was like achieving the impossible!
+					</p>
+					<p>
+						Finally, in Thailand, after traveling for a grueling 24 hours, we were exhausted. But as if by
+						magic, a driver named Don Williams appeared and whisked us away to a luxurious hotel. It was
+						the middle of the night, yet we were greeted with warmth and hospitality that truly made us
+						say, "Wow!" These experiences made me realize the immense power of creating moments that
+						go above and beyond expectations.
+					</p>
+					<p>
+						When you deliver "Wow" experiences to the people you influence – whether they are your
+						prospects, customers, team members, or even your own family – you are doing something
+						right. These moments have the power to transform lives, build lasting relationships, and set you
+						apart as a leader in your industry.
+					</p>
 				</div>
 				<div class="col-12 mt-3">
 					<h4 class="mb-0">Record Audio</h4>
@@ -117,7 +142,7 @@
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
 		<a href="{{url('/gratitude')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
-		<a href="{{url('/vision/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		<a href="{{url('/see-it/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 	</div>
 </section>
 @endsection
@@ -128,7 +153,7 @@
 		title: 'Success',
 		text: `{{ session('wowSuccess') }}`,
 		icon: 'success',
-		confirmButtonColor: "#66CE2C"
+		confirmButtonColor: "#6dabe4"
 	})
 </script>
 @endif
@@ -138,12 +163,12 @@
 		title: 'Error',
 		text: `{{ session('nextError') }}`,
 		icon: 'error',
-		confirmButtonColor: "#66CE2C"
+		confirmButtonColor: "#6dabe4"
 	})
 </script>
 @endif
 <script>
-	$('.sidenav  li:nth-of-type(9)').addClass('active');
+	$('.sidenav  li:nth-of-type(3)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
@@ -160,7 +185,7 @@
 						title: 'Empty Data',
 						text: "Please write something in Text Editor to save!",
 						icon: 'error',
-						confirmButtonColor: "#66CE2C"
+						confirmButtonColor: "#6dabe4"
 					})
 					return;
 				}
@@ -171,7 +196,7 @@
 					title: 'Missing Fields',
 					text: "Some fields are missing!",
 					icon: 'error',
-					confirmButtonColor: "#66CE2C"
+					confirmButtonColor: "#6dabe4"
 				})
 			}
 		})
@@ -304,7 +329,7 @@
 				text: "You won't be able to revert this!",
 				icon: 'warning',
 				showCancelButton: true,
-				confirmButtonColor: '#66CE2C',
+				confirmButtonColor: '#6dabe4',
 				cancelButtonColor: '#d33',
 				confirmButtonText: 'Yes, reset it!'
 			}).then((result) => {

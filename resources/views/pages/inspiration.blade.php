@@ -37,7 +37,7 @@
 	}
 
 	.navBtns {
-		border: 1px solid #66CE2C;
+		border: 1px solid #6dabe4;
 		padding: 5px 0px;
 		border-radius: 5px;
 		width: 150px;
@@ -47,12 +47,12 @@
 	}
 
 	.buttonSection a:hover {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		color: white;
 	}
 
 	.startBtn {
-		background-color: #66CE2C;
+		background-color: #6dabe4;
 		border-radius: 5px;
 		padding: 5px 15px;
 		border: none;
@@ -82,12 +82,35 @@
 			@csrf
 			<div class="row">
 				<div class="col-12 text-center">
-					<h3 class="headingTitle">Inspiration</h3>
+					<h3 class="headingTitle">Say It!</h3>
 				</div>
 				<div class="col-12 mt-3">
-
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui vero eaque obcaecati ab esse mollitia, reiciendis sed nihil assumenda quos. Sed magnam blanditiis laudantium enim nisi deleniti itaque molestiae quia omnis voluptatum, suscipit neque a eaque dolores reprehenderit perspiciatis doloribus veniam maxime, eum earum officiis commodi facere architecto. Illo, corporis.</p>
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint repellendus, aliquam ex laudantium maxime a dignissimos similique eius fuga ut ullam fugit sapiente repudiandae libero atque, cumque laborum inventore numquam eos odit perferendis. Nihil facilis porro, natus dolore eos nisi? Inventore, in? Quis facere minima magni minus molestias exercitationem vel, odio alias, ratione iste maxime repellat repudiandae dicta maiores excepturi perspiciatis molestiae totam ipsum sint dolor ipsa cumque. Numquam quibusdam aut vel maxime officiis nostrum accusamus suscipit odio, necessitatibus eum.</p>
+					<p>
+					<h5 class="mb-0">Clarity</h5>
+					Great leaders are not only visionaries but also exceptional communicators. Clarity lies at the
+					heart of effective communication. By expressing your ideas with absolute clarity, you ensure
+					that your message is understood and embraced by others. Clarity is kind.
+					</p>
+					<p>
+					<h5 class="mb-0">Tough Conversations</h5>
+					Tough conversations are an inevitable part of leadership. However, many entrepreneurs and
+					leaders struggle to approach these conversations confidently, often leaving the recipient
+					confused or uncertain. If you’ve thought twice about having a tough conversation with
+					someone on a particular issue, you’re probably overdue for that talk.
+					</p>
+					<p>
+					<h5 class="mb-0">Relationships Stand on Communication and Expectation</h5>
+					Building strong relationships requires effective communication and understanding of
+					expectations. By practicing open and honest communication, we can create an environment
+					where expectations are expressed, understood, met & surpassed.
+					</p>
+					<p>
+					<h5 class="mb-0">The Power of Over-Communication</h5>
+					As a leader, it is essential to go beyond basic communication and prioritize overcommunication. By proactively seeking to understand the expectations of your team,
+					colleagues, and loved ones, you can address their needs and concerns more effectively. It’s
+					probably more important to communicate to the point that people cannot misunderstand than
+					just understand.
+					</p>
 				</div>
 				<div class="col-12 mt-3">
 					<h4 class="mb-0">Record Audio</h4>
@@ -116,8 +139,8 @@
 
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
-		<a href="{{url('/vision')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
-		<a href="{{url('/execution/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		<a href="{{url('/see-it')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
+		<a href="{{url('/live-it/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 	</div>
 </section>
 @endsection
@@ -128,7 +151,7 @@
 		title: 'Success',
 		text: `{{ session('inspirationSuccess') }}`,
 		icon: 'success',
-		confirmButtonColor: "#66CE2C"
+		confirmButtonColor: "#6dabe4"
 	})
 </script>
 @endif
@@ -138,18 +161,18 @@
 		title: 'Error',
 		text: `{{ session('nextError') }}`,
 		icon: 'error',
-		confirmButtonColor: "#66CE2C"
+		confirmButtonColor: "#6dabe4"
 	})
 </script>
 @endif
 <script>
-	$('.sidenav  li:nth-of-type(11)').addClass('active');
+	$('.sidenav  li:nth-of-type(5)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
 		var scrollableDiv = document.getElementById("navAccordion");
 		scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
-		 type="button"
+		type = "button"
 		$("#inspirationForm").submit(function(e) {
 			e.preventDefault();
 			validation = validateForm();
@@ -160,7 +183,7 @@
 						title: 'Empty Data',
 						text: "Please write something in Text Editor to save!",
 						icon: 'error',
-						confirmButtonColor: "#66CE2C"
+						confirmButtonColor: "#6dabe4"
 					})
 					return;
 				}
@@ -171,7 +194,7 @@
 					title: 'Missing Fields',
 					text: "Some fields are missing!",
 					icon: 'error',
-					confirmButtonColor: "#66CE2C"
+					confirmButtonColor: "#6dabe4"
 				})
 			}
 		})
@@ -304,7 +327,7 @@
 				text: "You won't be able to revert this!",
 				icon: 'warning',
 				showCancelButton: true,
-				confirmButtonColor: '#66CE2C',
+				confirmButtonColor: '#6dabe4',
 				cancelButtonColor: '#d33',
 				confirmButtonText: 'Yes, reset it!'
 			}).then((result) => {
