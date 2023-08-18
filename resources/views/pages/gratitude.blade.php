@@ -147,7 +147,7 @@
 						</div>
 					</div>
 					<div class="mt-3">
-					<div id="testing"></div>
+					<div id="preview"></div>
 						<div id="editor"><?php echo $book['gratitude'] ?? '' ?></div>
 					</div>
 				</div>
@@ -265,7 +265,7 @@
 
 		// handle result event
 		recognition.onresult = function(event) {
-			transcriptionField = document.getElementById('testing');
+			transcriptionField = document.getElementById('preview');
 			let interimTranscription = '';
 			for (let i = event.resultIndex; i < event.results.length; i++) {
 				
