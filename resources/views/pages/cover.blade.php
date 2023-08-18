@@ -50,6 +50,13 @@
 		background-color: #6dabe4;
 		color: white;
 	}
+
+	#pageCode::placeholder {
+		/* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: gray !important;
+		opacity: 1 !important;
+		/* Firefox */
+	}
 </style>
 @include('includes.navbar')
 <section class="contentSection position-relative">
@@ -82,9 +89,35 @@
 
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
+		@if(auth()->user()->unlocked_pages >= 2)
 		<a href="{{url('/gratitude/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		@else
+		<a href="javascript:void(0)" class="navBtns" id="nextButton" data-toggle="modal" data-target="#exampleModalCenter">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		@endif
 	</div>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Enter Code</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>You must enter Page Code to unlock next page.</p>
+				<input name="code" type="text" id="pageCode" class="form-control validation" placeholder="Write Code Here...">
+				<input name="page_number" type="hidden" id="pageNumber" value="2" class="form-control validation">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" id="submitCodeButton">Proceed</button>
+			</div>
+		</div>
+	</div>
+</div>
 @endsection
 @section('insertjavascript')
 <script>
@@ -144,6 +177,65 @@
 							icon: 'success',
 							confirmButtonColor: "#6dabe4"
 						})
+					}
+				},
+				error: function(jqXHR, exception) {
+					Swal.fire({
+						title: 'Validation Error',
+						text: jqXHR.responseJSON.message,
+						icon: 'error',
+						confirmButtonColor: "#6dabe4"
+					})
+				}
+			});
+			// Ajax REQUEST END
+		});
+		let pageErrors = 0;
+		$("#submitCodeButton").click(function() {
+			$(".validation").each(function() {
+				if ($(this).val() == '') {
+					pageErrors++;
+					$(this).css('border', '1px solid red');
+				} else {
+					$(this).css('border', '1px solid rgba(0, 0, 0, 0.1)');
+				}
+			})
+			if (pageErrors > 0) {
+				Swal.fire({
+					title: 'Empty Fields',
+					text: 'You must Enter Code.',
+					icon: 'error',
+					confirmButtonColor: "#6dabe4"
+				})
+				pageErrors--;
+				return;
+			}
+			var data = {
+				code: $('#pageCode').val(),
+				page_number: $('#pageNumber').val(),
+			}
+
+			// Ajax REQUEST START
+			var csrfToken = $('meta[name="csrf-token"]').attr('content');
+			$.ajax({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				},
+				url: `{{url('/validatePageCode')}}`,
+				type: "POST",
+				data: data,
+				cache: false,
+				success: function(dataResult) {
+					if (dataResult.success == false) {
+						Swal.fire({
+							title: 'Error',
+							text: dataResult.message,
+							icon: 'error',
+							confirmButtonColor: "#6dabe4"
+						})
+						return;
+					} else {
+						window.location.href = `{{url('/gratitude/con')}}`
 					}
 				},
 				error: function(jqXHR, exception) {

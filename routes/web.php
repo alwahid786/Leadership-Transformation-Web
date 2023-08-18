@@ -61,6 +61,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/conclusion/con', [ContentController::class, 'conclusionFunction'])->name('conclusionFunction');
     Route::get('/create-pdf', [ContentController::class, 'createPdf'])->name('createPdf');
     Route::get('/view-pdf', [ContentController::class, 'viewPdf'])->name('viewPdf');
+    Route::post('/validatePageCode', [ContentController::class, 'validatePageCode'])->name('validatePageCode');
 
     // Submit Forms 
     Route::post('/cover/submit', [ContentController::class, 'submitCover'])->name('submitCover');

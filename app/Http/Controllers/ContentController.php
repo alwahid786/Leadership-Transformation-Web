@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Book;
+use App\Models\PageCode;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\MessageBag;
@@ -13,6 +14,7 @@ use App\Mail\OtpMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class ContentController extends Controller
 {
@@ -310,80 +312,7 @@ class ContentController extends Controller
         return redirect()->back()->with('executionSuccess', 'Data inserted Successfully!');
     }
 
-    // Create A PDF Book Function 
-    // public function createPdf()
-    // {
-    //     $loginUserId = Auth::user()->id;
-    //     $book = Book::where('user_id', $loginUserId)->first();
-
-    //     // Load PDFs
-    //     $wowPdf = PDF::loadView('pages.wow-pdf', compact('book'));
-    //     $gratitudePdf = PDF::loadView('pages.gratitude-pdf', compact('book'));
-    //     $seePdf = PDF::loadView('pages.see-it-pdf', compact('book'));
-    //     $sayPdf = PDF::loadView('pages.say-it-pdf', compact('book'));
-    //     $livePdf = PDF::loadView('pages.live-it-pdf', compact('book'));
-
-    //     // Set PDF sizes
-    //     $pdfSize = [0, 0, 500, 800];
-    //     $wowPdf->setPaper($pdfSize, 'portrait');
-    //     $gratitudePdf->setPaper($pdfSize, 'portrait');
-    //     $seePdf->setPaper($pdfSize, 'portrait');
-    //     $sayPdf->setPaper($pdfSize, 'portrait');
-    //     $livePdf->setPaper($pdfSize, 'portrait');
-
-    //     // Save PDF Files
-    //     $timestamp = time();
-    //     $pdfDirectory = public_path('assets/pdf/');
-    //     $wow = $timestamp . 'wow.pdf';
-    //     $gratitude = $timestamp . 'gratitude.pdf';
-    //     $see = $timestamp . 'see.pdf';
-    //     $say = $timestamp . 'say.pdf';
-    //     $live = $timestamp . 'live.pdf';
-
-    //     $wowPdf->save($pdfDirectory . $wow);
-    //     $gratitudePdf->save($pdfDirectory . $gratitude);
-    //     $seePdf->save($pdfDirectory . $see);
-    //     $sayPdf->save($pdfDirectory . $say);
-    //     $livePdf->save($pdfDirectory . $live);
-
-    //     // Define PDF paths
-    //     $pdfsToMerge = [
-    //         public_path('assets/pdf/pdf-1.pdf'),
-    //         $pdfDirectory . $wow,
-    //         public_path('assets/pdf/pdf-2.pdf'),
-    //         $pdfDirectory . $gratitude,
-    //         public_path('assets/pdf/pdf-3.pdf'),
-    //         public_path('assets/pdf/pdf-4.pdf'),
-    //         $pdfDirectory . $see,
-    //         public_path('assets/pdf/pdf-5.pdf'),
-    //         $pdfDirectory . $say,
-    //         public_path('assets/pdf/pdf-6.pdf'),
-    //         $pdfDirectory . $live,
-    //         public_path('assets/pdf/pdf-7.pdf'),
-    //     ];
-
-    //     $finalPdf = 'Transformational Leadership ' . $timestamp . '.pdf';
-    //     $mergedPdfPath = $pdfDirectory . $finalPdf;
-
-    //     // Merge PDFs
-    //     $pdf = PDFMerger::init();
-
-    //     foreach ($pdfsToMerge as $pdfPath) {
-    //         $pdf->addPDF($pdfPath, 'all');
-    //     }
-    //     $pdf->merge();
-    //     $pdf->save($mergedPdfPath);
-
-    //     // Set the response content-type to PDF
-    //     $headers = [
-    //         'Content-Type' => 'application/pdf',
-    //         'Content-Disposition' => 'inline; filename="Transformational Leadership.pdf"',
-    //     ];
-
-    //     // Return the merged PDF in a new tab
-    //     return response()->file($mergedPdfPath, $headers);
-    // }
-
+    // Create PDF Function 
     public function createPdf()
     {
         $loginUserId = Auth::user()->id;
@@ -400,84 +329,23 @@ class ContentController extends Controller
         return response($pdf->stream(), 200, $headers);
     }
 
-    // Working One 
-    // public function createPdf()
-    // {
-    //     $loginUserId = Auth::user()->id;
-    //     $book = Book::where('user_id', $loginUserId)->first();
-    //     // Load the existing PDF
-    //     $pdf = new Fpdi();
-    //     $pageCount = $pdf->setSourceFile(public_path('assets/pdf/main-pdf.pdf'));
-
-    //     // Iterate through pages and add dynamic content
-    //     for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
-    //         $templateId = $pdf->importPage($pageNo);
-    //         $pdf->addPage();
-    //         $pdf->useTemplate($templateId);
-
-    //         // Check if this is the specific page after which you want to add content
-    //         if ($pageNo == 2) {
-    //             $pdf->AddPage();
-    //             $pdf->SetFont('Arial', 'B', 12);
-    //             $pdf->SetXY(50, 50); // Set position for text
-    //             $pdf->Cell(0, 10, $book->gratitude, 0, 0, 'L');
-    //         }
-    //     }
-
-    //     // Output the modified PDF
-    //     $outputPath = storage_path('app/public/' . time() . 'generated.pdf');
-    //     $pdf->Output($outputPath, 'F');
-
-    //     return response()->download($outputPath, 'generated.pdf');
-    // }
-    // public function createPdf()
-    // {
-    //     $loginUserId = Auth::user()->id;
-    //     $book = Book::where('user_id', $loginUserId)->first();
-    //     // dd($book->gratitude);
-    //     // Initialize FPDI
-    //     $pdf = new Fpdi();
-
-    //     // Load the existing PDF
-    //     $pageCount = $pdf->setSourceFile(public_path('assets/pdf/main-pdf.pdf'));
-
-    //     // Initialize TCPDF for rendering HTML
-    //     $tcpdf = new TCPDF();
-
-    //     // Iterate through pages and add dynamic content
-    //     for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
-    //         $templateId = $pdf->importPage($pageNo);
-    //         $pdf->AddPage();
-    //         $pdf->useTemplate($templateId);
-
-    //         // Check if this is the specific page after which you want to add content
-    //         if ($pageNo == 2) {
-    //             // $pdf->AddPage();
-
-    //             // // Set the position for HTML content
-    //             // $htmlContent = $book->gratitude;
-    //             // // $htmlContent = View::make('pages.pdf', ['book' => $book])->render();
-    //             // $tcpdf->AddPage();
-    //             // $tcpdf->writeHTML($htmlContent);
-
-    //             $pdf->AddPage();
-    //             $pdf->SetFont('Arial', 'B', 12);
-    //             $pdf->SetXY(50, 50); // Set position for text
-    //             $pdf->Cell(0, 10, View::make('pages.pdf', ['book' => $book])->render(), 0, 0, 'L');
-    //         }
-    //     }
-
-    //     // Output the modified PDF
-    //     $outputPath = storage_path('app/public/' . time() . 'generated.pdf');
-    //     $pdf->Output($outputPath, 'F');
-
-    //     return response()->download($outputPath, 'generated.pdf');
-    // }
 
     public function viewPdf()
     {
         $loginUserId = Auth::user()->id;
         $book = Book::where('user_id', $loginUserId)->first();
         return view('pages.pdf', compact('book'));
+    }
+
+    public function validatePageCode(Request $request)
+    {
+        $loginUserId = Auth::user()->id;
+        $pageCode = PageCode::where('page_number', $request->page_number)->first();
+        if ($pageCode->code === $request->code) {
+            User::where('id', $loginUserId)->update(['unlocked_pages' => $request->page_number]);
+            return $this->sendResponse([], "Page Unlocked Successfully!");
+        } else {
+            return $this->sendError('Incorrect Page Code!');
+        }
     }
 }

@@ -74,6 +74,13 @@
 		border: none;
 		color: white;
 	}
+
+	#pageCode::placeholder {
+		/* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: gray !important;
+		opacity: 1 !important;
+		/* Firefox */
+	}
 </style>
 @include('includes.navbar')
 <section class="contentSection position-relative">
@@ -89,26 +96,26 @@
 						Vision in Leadership is a multifaceted concept.
 					</p>
 					<p>
-						<h5 class="mb-0">Own your Vision.</h5> It’s vital to have a clear vision of what you want to achieve. Visualize your
-						goals, imagine every detail - how it looks, smells, and tastes. Seeing your vision is essential for
-						truly believing in its possibility.
+					<h5 class="mb-0">Own your Vision.</h5> It’s vital to have a clear vision of what you want to achieve. Visualize your
+					goals, imagine every detail - how it looks, smells, and tastes. Seeing your vision is essential for
+					truly believing in its possibility.
 					</p>
 					<p>
-						<h5 class="mb-0">Bill Gates Vision –</h5> “Put a computer on every desk in every home in the World.” Bill Gates,
-						founder and genius behind MicrosoA, set out on a mission to put a computer on every desk in
-						every home across the globe.
+					<h5 class="mb-0">Bill Gates Vision –</h5> “Put a computer on every desk in every home in the World.” Bill Gates,
+					founder and genius behind MicrosoA, set out on a mission to put a computer on every desk in
+					every home across the globe.
 					</p>
 					<p>
-						<h5 class="mb-0">Steve Jobs – User Experience.</h5> The visionary leader of Apple, may not have formally wriEen
-						down his vision statement. However, he was maniacal about craAing an unparalleled user
-						experience. Steve wanted technology to be intuiIve, powerful, and effortlessly accessible.
+					<h5 class="mb-0">Steve Jobs – User Experience.</h5> The visionary leader of Apple, may not have formally wriEen
+					down his vision statement. However, he was maniacal about craAing an unparalleled user
+					experience. Steve wanted technology to be intuiIve, powerful, and effortlessly accessible.
 					</p>
 					<p>
-						<h5 class="mb-0">See things from the other person’s perspective.</h5> Understanding the power of perspective is
-						crucial when leading others. Adopting the mindset of those you seek to influence will help you
-						cater to their needs and desires. By genuinely seeing things from their point of view, you will be
-						more successful in connecting with and leading them. Remember, their perspective is the one
-						that truly matters.
+					<h5 class="mb-0">See things from the other person’s perspective.</h5> Understanding the power of perspective is
+					crucial when leading others. Adopting the mindset of those you seek to influence will help you
+					cater to their needs and desires. By genuinely seeing things from their point of view, you will be
+					more successful in connecting with and leading them. Remember, their perspective is the one
+					that truly matters.
 					</p>
 				</div>
 				<div class="col-12 mt-3">
@@ -138,9 +145,35 @@
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
 		<a href="{{url('/wow')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
+		@if(auth()->user()->unlocked_pages >= 6)
 		<a href="{{url('/say-it/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		@else
+		<a href="javascript:void(0)" class="navBtns" id="nextButton" data-toggle="modal" data-target="#exampleModalCenter">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		@endif
 	</div>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Enter Code</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>You must enter Page Code to unlock next page.</p>
+				<input name="code" type="text" id="pageCode" class="form-control validation" placeholder="Write Code Here...">
+				<input name="page_number" type="hidden" id="pageNumber" value="6" class="form-control validation">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" id="submitCodeButton">Proceed</button>
+			</div>
+		</div>
+	</div>
+</div>
 @endsection
 @section('insertjavascript')
 @if(session()->has('visionSuccess'))
@@ -378,6 +411,66 @@
 		function formatTime(time) {
 			return (time < 10 ? '0' : '') + time;
 		}
+
+		let pageErrors = 0;
+		$("#submitCodeButton").click(function() {
+			$(".validation").each(function() {
+				if ($(this).val() == '') {
+					pageErrors++;
+					$(this).css('border', '1px solid red');
+				} else {
+					$(this).css('border', '1px solid rgba(0, 0, 0, 0.1)');
+				}
+			})
+			if (pageErrors > 0) {
+				Swal.fire({
+					title: 'Empty Fields',
+					text: 'You must Enter Code.',
+					icon: 'error',
+					confirmButtonColor: "#6dabe4"
+				})
+				pageErrors--;
+				return;
+			}
+			var data = {
+				code: $('#pageCode').val(),
+				page_number: $('#pageNumber').val(),
+			}
+
+			// Ajax REQUEST START
+			var csrfToken = $('meta[name="csrf-token"]').attr('content');
+			$.ajax({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				},
+				url: `{{url('/validatePageCode')}}`,
+				type: "POST",
+				data: data,
+				cache: false,
+				success: function(dataResult) {
+					if (dataResult.success == false) {
+						Swal.fire({
+							title: 'Error',
+							text: dataResult.message,
+							icon: 'error',
+							confirmButtonColor: "#6dabe4"
+						})
+						return;
+					} else {
+						window.location.href = `{{url('/say-it/con')}}`
+					}
+				},
+				error: function(jqXHR, exception) {
+					Swal.fire({
+						title: 'Validation Error',
+						text: jqXHR.responseJSON.message,
+						icon: 'error',
+						confirmButtonColor: "#6dabe4"
+					})
+				}
+			});
+			// Ajax REQUEST END
+		});
 	});
 </script>
 @endsection
