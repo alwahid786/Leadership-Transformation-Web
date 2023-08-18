@@ -158,12 +158,12 @@
 </script>
 @endif
 <script>
-	$('.sidenav  li:nth-of-type(6)').addClass('active');
+	$('.sidenav  li:nth-of-type(7)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
-		var scrollableDiv = document.getElementById("navAccordion");
-		scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
+		// var scrollableDiv = document.getElementById("navAccordion");
+		// scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
 
 		type = "button"
 		$("#excutionForm").submit(function(e) {

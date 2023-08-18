@@ -46,12 +46,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/cover', [ContentController::class, 'coverPage'])->name('coverPage');
     Route::get('/gratitude', [ContentController::class, 'gratitudePage'])->name('gratitudePage');
     Route::get('/wow', [ContentController::class, 'wowPage'])->name('wowPage');
+    Route::get('/desire', [ContentController::class, 'desirePage'])->name('desirePage');
     Route::get('/see-it', [ContentController::class, 'visionPage'])->name('visionPage');
     Route::get('/say-it', [ContentController::class, 'inspirationPage'])->name('inspirationPage');
     Route::get('/live-it', [ContentController::class, 'executionPage'])->name('executionPage');
     Route::get('/conclusion', [ContentController::class, 'conclusionPage'])->name('conclusionPage');
     Route::get('/slide/{slideNumber}', [ContentController::class, 'showSlide'])->name('slide');
     Route::get('/gratitude/con', [ContentController::class, 'gratitudeFunction'])->name('gratitudeFunction');
+    Route::get('/desire/con', [ContentController::class, 'desireFunction'])->name('desireFunction');
     Route::get('/wow/con', [ContentController::class, 'wowFunction'])->name('wowFunction');
     Route::get('/see-it/con', [ContentController::class, 'visionFunction'])->name('visionFunction');
     Route::get('/say-it/con', [ContentController::class, 'inspirationFunction'])->name('inspirationFunction');
@@ -63,6 +65,7 @@ Route::middleware('auth')->group(function () {
     // Submit Forms 
     Route::post('/cover/submit', [ContentController::class, 'submitCover'])->name('submitCover');
     Route::post('/gratitude/submit', [ContentController::class, 'submitGratitude'])->name('submitGratitude');
+    Route::post('/desire/submit', [ContentController::class, 'submitDesire'])->name('submitDesire');
     Route::post('/wow/submit', [ContentController::class, 'submitWow'])->name('submitWow');
     Route::post('/vision/submit', [ContentController::class, 'submitVision'])->name('submitVision');
     Route::post('/inspiration/submit', [ContentController::class, 'submitInspiration'])->name('submitInspiration');

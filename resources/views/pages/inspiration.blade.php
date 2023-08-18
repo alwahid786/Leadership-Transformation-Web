@@ -166,12 +166,12 @@
 </script>
 @endif
 <script>
-	$('.sidenav  li:nth-of-type(5)').addClass('active');
+	$('.sidenav  li:nth-of-type(6)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
-		var scrollableDiv = document.getElementById("navAccordion");
-		scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
+		// var scrollableDiv = document.getElementById("navAccordion");
+		// scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
 		type = "button"
 		$("#inspirationForm").submit(function(e) {
 			e.preventDefault();

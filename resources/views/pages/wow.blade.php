@@ -168,12 +168,12 @@
 </script>
 @endif
 <script>
-	$('.sidenav  li:nth-of-type(3)').addClass('active');
+	$('.sidenav  li:nth-of-type(4)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
-		var scrollableDiv = document.getElementById("navAccordion");
-		scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
+		// var scrollableDiv = document.getElementById("navAccordion");
+		// scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
 
 		$("#wowForm").submit(function(e) {
 			e.preventDefault();
