@@ -13,11 +13,6 @@ use App\Mail\OtpMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
-use Webklex\PDFMerger\Facades\PDFMergerFacade as PDFMerger;
-use setasign\Fpdi\Fpdi;
-use Illuminate\Support\Facades\View;
-use TCPDF;
-use Dompdf\Dompdf;
 
 class ContentController extends Controller
 {
@@ -389,21 +384,21 @@ class ContentController extends Controller
     //     return response()->file($mergedPdfPath, $headers);
     // }
 
-    // public function createPdf()
-    // {
-    //     $loginUserId = Auth::user()->id;
-    //     $book = Book::where('user_id', $loginUserId)->first();
-    //     $pdf = PDF::loadView('pages.pdf', compact('book')); // load view and pass data
-    //     $pdf->setPaper([0, 0, 500, 800], 'portrait');
-    //     // Set the response content-type to PDF
-    //     $headers = [
-    //         'Content-Type' => 'application/pdf',
-    //         'Content-Disposition' => 'inline; filename=' . 'Transformational Leadership' . '".pdf"'
-    //     ];
+    public function createPdf()
+    {
+        $loginUserId = Auth::user()->id;
+        $book = Book::where('user_id', $loginUserId)->first();
+        $pdf = PDF::loadView('pages.pdf', compact('book')); // load view and pass data
+        $pdf->setPaper([0, 0, 800, 1200], 'portrait');
+        // Set the response content-type to PDF
+        $headers = [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline; filename=' . 'Transformational Leadership' . '".pdf"'
+        ];
 
-    //     // Return the rendered PDF in a new tab
-    //     return response($pdf->stream(), 200, $headers);
-    // }
+        // Return the rendered PDF in a new tab
+        return response($pdf->stream(), 200, $headers);
+    }
 
     // Working One 
     // public function createPdf()
@@ -435,49 +430,49 @@ class ContentController extends Controller
 
     //     return response()->download($outputPath, 'generated.pdf');
     // }
-    public function createPdf()
-    {
-        $loginUserId = Auth::user()->id;
-        $book = Book::where('user_id', $loginUserId)->first();
-        // dd($book->gratitude);
-        // Initialize FPDI
-        $pdf = new Fpdi();
+    // public function createPdf()
+    // {
+    //     $loginUserId = Auth::user()->id;
+    //     $book = Book::where('user_id', $loginUserId)->first();
+    //     // dd($book->gratitude);
+    //     // Initialize FPDI
+    //     $pdf = new Fpdi();
 
-        // Load the existing PDF
-        $pageCount = $pdf->setSourceFile(public_path('assets/pdf/main-pdf.pdf'));
+    //     // Load the existing PDF
+    //     $pageCount = $pdf->setSourceFile(public_path('assets/pdf/main-pdf.pdf'));
 
-        // Initialize TCPDF for rendering HTML
-        $tcpdf = new TCPDF();
+    //     // Initialize TCPDF for rendering HTML
+    //     $tcpdf = new TCPDF();
 
-        // Iterate through pages and add dynamic content
-        for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
-            $templateId = $pdf->importPage($pageNo);
-            $pdf->AddPage();
-            $pdf->useTemplate($templateId);
+    //     // Iterate through pages and add dynamic content
+    //     for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
+    //         $templateId = $pdf->importPage($pageNo);
+    //         $pdf->AddPage();
+    //         $pdf->useTemplate($templateId);
 
-            // Check if this is the specific page after which you want to add content
-            if ($pageNo == 2) {
-                // $pdf->AddPage();
+    //         // Check if this is the specific page after which you want to add content
+    //         if ($pageNo == 2) {
+    //             // $pdf->AddPage();
 
-                // // Set the position for HTML content
-                // $htmlContent = $book->gratitude;
-                // // $htmlContent = View::make('pages.pdf', ['book' => $book])->render();
-                // $tcpdf->AddPage();
-                // $tcpdf->writeHTML($htmlContent);
+    //             // // Set the position for HTML content
+    //             // $htmlContent = $book->gratitude;
+    //             // // $htmlContent = View::make('pages.pdf', ['book' => $book])->render();
+    //             // $tcpdf->AddPage();
+    //             // $tcpdf->writeHTML($htmlContent);
 
-                $pdf->AddPage();
-                $pdf->SetFont('Arial', 'B', 12);
-                $pdf->SetXY(50, 50); // Set position for text
-                $pdf->Cell(0, 10, View::make('pages.pdf', ['book' => $book])->render(), 0, 0, 'L');
-            }
-        }
+    //             $pdf->AddPage();
+    //             $pdf->SetFont('Arial', 'B', 12);
+    //             $pdf->SetXY(50, 50); // Set position for text
+    //             $pdf->Cell(0, 10, View::make('pages.pdf', ['book' => $book])->render(), 0, 0, 'L');
+    //         }
+    //     }
 
-        // Output the modified PDF
-        $outputPath = storage_path('app/public/' . time() . 'generated.pdf');
-        $pdf->Output($outputPath, 'F');
+    //     // Output the modified PDF
+    //     $outputPath = storage_path('app/public/' . time() . 'generated.pdf');
+    //     $pdf->Output($outputPath, 'F');
 
-        return response()->download($outputPath, 'generated.pdf');
-    }
+    //     return response()->download($outputPath, 'generated.pdf');
+    // }
 
     public function viewPdf()
     {

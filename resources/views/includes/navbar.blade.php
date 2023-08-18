@@ -593,19 +593,19 @@ $page = auth()->user()->page_number;
             <li class="nav-item my-1 <?php if ($page < 10) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 10) echo "style='pointer-events: none'"; ?> href="{{url('see-it')}}">
                     <i style="font-size: 22px; width:20px;" class="fas fa-binoculars mr-3"></i>
-                    See It!
+                    See It
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 11) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 11) echo "style='pointer-events: none'"; ?> href="{{url('say-it')}}">
                     <i style="font-size: 22px; width:20px;" class="fas fa-microphone mr-3"></i>
-                    Say It!
+                    Say It
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 12) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 12) echo "style='pointer-events: none'"; ?> href="{{url('live-it')}}">
                     <i style="font-size: 22px; width:20px;" class="fas fa-play mr-3"></i>
-                    Live It!
+                    Live It
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 13) echo "disabled-item"; ?>">

@@ -82,7 +82,7 @@
 			@csrf
 			<div class="row">
 				<div class="col-12 text-center">
-					<h3 class="headingTitle mb-0">Desire</h3>
+					<h3 class="headingTitle mb-0">What Do You Want?</h3>
 				</div>
 				<div class="col-12 mt-3">
 					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo vel optio repudiandae officiis maxime perferendis hic harum laboriosam, rerum porro commodi vero praesentium fugit molestias vitae deserunt aspernatur non numquam et odio eligendi ipsa aperiam sed quis. Saepe, tempora eligendi! Quo adipisci pariatur cupiditate id unde vero numquam, fugiat fuga.</p>

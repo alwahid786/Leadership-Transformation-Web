@@ -44,7 +44,7 @@
     @endif
     @if(isset($book['wow']) && $book['wow'] != '')
     <div class="wow-content" style="page-break-before: always;">
-        <h3 class="text-center">Wow</h3>
+        <h3>Your Wow Share:</h3>
         {!! $book['wow']!!}
     </div>
     @endif
