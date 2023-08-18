@@ -78,40 +78,24 @@
 @include('includes.navbar')
 <section class="contentSection position-relative">
 	<div class="container-fluid contentRow">
-		<form action="{{route('submitExecution')}}" id="excutionForm" method="POST">
+		<form action="{{route('submitDesire')}}" id="desireForm" method="POST">
 			@csrf
 			<div class="row">
 				<div class="col-12 text-center">
-					<h3 class="headingTitle">Live It!</h3>
+					<h3 class="headingTitle mb-0">Desire</h3>
 				</div>
 				<div class="col-12 mt-3">
-					<p>
-					<h5 class="mb-0">The Ripple Effect of Your Actions</h5>
-					As a leader, your actions speak far louder than words. In fact the scrams of your actions many
-					times drown out the sound of your words.
-					</p>
-					<p>
-					<h5 class="mb-0">Embrace the Power of Observation</h5>
-					People naturally observe and judge those they look up to, and as a leader, you are constantly
-					under their watchful eyes, someone is always watching. It’s important to recognize that those
-					around you are evaluating you based on what you do, not just what you say.
-					</p>
-					<p>
-					<h5 class="mb-0">Living Your Vision, Living Your Goals</h5>
-					To lead authentically, you must walk the talk. Your vision and goals aren't just words on paper;
-					they are a roadmap for your daily life. Embody your aspirations and lead by example, and you
-					will create a powerful synergy that propels your team and yourself toward success. Let your
-					actions harmonize with your words and watch your influence soar.
-					</p>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo vel optio repudiandae officiis maxime perferendis hic harum laboriosam, rerum porro commodi vero praesentium fugit molestias vitae deserunt aspernatur non numquam et odio eligendi ipsa aperiam sed quis. Saepe, tempora eligendi! Quo adipisci pariatur cupiditate id unde vero numquam, fugiat fuga.</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit culpa error ex molestiae, ratione libero sapiente consectetur possimus quod maxime quis aut illo nostrum voluptatem sint architecto explicabo labore cum eius distinctio beatae. Eligendi, laudantium iste vitae molestiae repellendus consectetur sit incidunt ipsam nulla eum dolorum, voluptatibus temporibus quis! Quas expedita rerum ullam dignissimos! Asperiores voluptatem earum dolor quasi, harum labore dicta. Libero quam ad nulla expedita tenetur reprehenderit sint?</p>
 				</div>
 				<div class="col-12 mt-3">
 					<h4 class="mb-0">Record Audio</h4>
 					<p>Record audio to convert to text in the editor below.</p>
 					<div id="controls" class="d-flex align-items-center justify-content-between">
 						<div>
-							<button data-class="execution" type="button" id="startBtn1" data-sr_no="1" data-editor_name="editor" class="startBtn">Start Recording</button>
-							<button data-class="execution" type="button" id="stopBtn1" data-sr_no="1" class="btn-danger stopBtn" style="display: none;">Stop Recording</button>
-							<button data-class="execution" type="button" id="resetBtn1" data-sr_no="1" class="btn-danger resetBtn" style="display: none;">Reset Text</button>
+							<button data-class="desire" type="button" id="startBtn1" data-sr_no="1" data-editor_name="editor" class="startBtn">Start Recording</button>
+							<button data-class="desire" type="button" id="stopBtn1" data-sr_no="1" class="btn-danger stopBtn" style="display: none;">Stop Recording</button>
+							<button data-class="desire" type="button" id="resetBtn1" data-sr_no="1" class="btn-danger resetBtn" style="display: none;">Reset Text</button>
 						</div>
 						<div class="d-flex align-items-center">
 							<i class="zmdi zmdi-circle mr-2"></i>
@@ -119,29 +103,29 @@
 						</div>
 					</div>
 					<div class="mt-3">
-						<div id="editor"><?php echo $book['execution'] ?? '' ?></div>
+						<div id="editor"><?php echo $book['desire'] ?? '' ?></div>
 					</div>
-					<input type="hidden" name="execution" id="contentInput" data-class="execution">
-					<div class="text-right px-3 mt-3 w-100">
-						<button type="submit" data-class="execution" id="save" class="btn btn-primary"><i class="fas fa-save mr-2"></i>Save</button>
-					</div>
+				</div>
+				<input type="hidden" name="desire" id="contentInput" data-class="desire">
+				<div class="text-right px-3 mt-3 w-100">
+					<button type="submit" data-class="desire" id="save" class="btn btn-primary"><i class="fas fa-save mr-2"></i>Save</button>
 				</div>
 			</div>
 		</form>
 
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
-		<a href="{{url('/say-it')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
-		<a href="{{url('/conclusion/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		<a href="{{url('/gratitude')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
+		<a href="{{url('/wow/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 	</div>
 </section>
 @endsection
 @section('insertjavascript')
-@if(session()->has('executionSuccess'))
+@if(session()->has('desireSuccess'))
 <script>
 	Swal.fire({
 		title: 'Success',
-		text: `{{ session('executionSuccess') }}`,
+		text: `{{ session('desireSuccess') }}`,
 		icon: 'success',
 		confirmButtonColor: "#6dabe4"
 	})
@@ -158,15 +142,14 @@
 </script>
 @endif
 <script>
-	$('.sidenav  li:nth-of-type(7)').addClass('active');
+	$('.sidenav  li:nth-of-type(3)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
-		// var scrollableDiv = document.getElementById("navAccordion");
-		// scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
+		var scrollableDiv = document.getElementById("navAccordion");
+		scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
 
-		type = "button"
-		$("#excutionForm").submit(function(e) {
+		$("#desireForm").submit(function(e) {
 			e.preventDefault();
 			validation = validateForm();
 			if (validation) {
@@ -181,7 +164,7 @@
 					return;
 				}
 				$('#contentInput').val(content);
-				$("#excutionForm")[0].submit();
+				$("#desireForm")[0].submit();
 			} else {
 				Swal.fire({
 					title: 'Missing Fields',
@@ -194,9 +177,9 @@
 
 		function validateForm() {
 			let errorCount = 0;
-			$("form#excutionForm :input").each(function() {
+			$("form#desireForm :input").each(function() {
 				let val = $(this).val();
-				if (val == '' && $(this).attr('data-class') !== 'execution') {
+				if (val == '' && $(this).attr('data-class') !== 'desire') {
 					errorCount++
 					$(this).css('border', '1px solid red');
 				} else {
@@ -208,6 +191,7 @@
 			}
 			return true;
 		}
+
 
 		CKEDITOR.replace('editor', {
 			height: '400px',

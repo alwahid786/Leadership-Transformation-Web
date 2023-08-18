@@ -502,14 +502,14 @@ $page = auth()->user()->page_number;
                 <a class="nav-link sidenav-item dasboard-link d-flex align-items-center" href="{{url('/cover')}}">
                     <!-- <img src="{{asset('assets/images/d-white.png')}}" class="icon-white pr-2">
                     <img src="{{asset('assets/images/d-blue.png')}}" class="icon-blue pr-2"> -->
-                    <i style="font-size: 20px;" class="fas fa-book mr-2"></i>
-                    Cover Page
+                    <i style="font-size: 22px; width:20px;" class="fas fa-book mr-3"></i>
+                    <span class="">Cover Page</span>
                 </a>
             </li>
             {{--<li class="nav-item my-1  <?php if ($page < 1) echo "disabled-item my-0"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 1) echo "style='pointer-events: none'"; ?> href="{{url('slide/1')}}">
             <div class="position-relative">
-                <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
+                <i style="font-size: 22px; width:20px;" class="fas fa-file-alt mr-3"></i>
                 <div class="position-absolute numberingSlideDiv">
                     1
                 </div>
@@ -520,7 +520,7 @@ $page = auth()->user()->page_number;
             <li class="nav-item my-1 <?php if ($page < 2) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 2) echo "style='pointer-events: none'"; ?> href="{{url('slide/2')}}">
                     <div class="position-relative">
-                        <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
+                        <i style="font-size: 22px; width:20px;" class="fas fa-file-alt mr-3"></i>
                         <div class="position-absolute numberingSlideDiv">
                             2
                         </div>
@@ -531,7 +531,7 @@ $page = auth()->user()->page_number;
             <li class="nav-item my-1 <?php if ($page < 3) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 3) echo "style='pointer-events: none'"; ?> href="{{url('slide/3')}}">
                     <div class="position-relative">
-                        <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
+                        <i style="font-size: 22px; width:20px;" class="fas fa-file-alt mr-3"></i>
                         <div class="position-absolute numberingSlideDiv">
                             3
                         </div>
@@ -542,7 +542,7 @@ $page = auth()->user()->page_number;
             <li class="nav-item my-1 <?php if ($page < 4) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 4) echo "style='pointer-events: none'"; ?> href="{{url('slide/4')}}">
                     <div class="position-relative">
-                        <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
+                        <i style="font-size: 22px; width:20px;" class="fas fa-file-alt mr-3"></i>
                         <div class="position-absolute numberingSlideDiv">
                             4
                         </div>
@@ -553,7 +553,7 @@ $page = auth()->user()->page_number;
             <li class="nav-item my-1 <?php if ($page < 5) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 5) echo "style='pointer-events: none'"; ?> href="{{url('slide/5')}}">
                     <div class="position-relative">
-                        <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
+                        <i style="font-size: 22px; width:20px;" class="fas fa-file-alt mr-3"></i>
                         <div class="position-absolute numberingSlideDiv">
                             5
                         </div>
@@ -564,7 +564,7 @@ $page = auth()->user()->page_number;
             <li class="nav-item my-1 <?php if ($page < 6) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 6) echo "style='pointer-events: none'"; ?> href="{{url('slide/6')}}">
                     <div class="position-relative">
-                        <i style="font-size: 22px;" class="fas fa-file-alt mr-3"></i>
+                        <i style="font-size: 22px; width:20px;" class="fas fa-file-alt mr-3"></i>
                         <div class="position-absolute numberingSlideDiv">
                             6
                         </div>
@@ -574,37 +574,43 @@ $page = auth()->user()->page_number;
             </li>--}}
             <li class="nav-item my-1 <?php if ($page < 7) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 7) echo "style='pointer-events: none'"; ?> href="{{url('gratitude')}}">
-                    <i style="font-size: 22px;" class="fas fa-heart mr-3"></i>
+                    <i style="font-size: 22px; width:20px;" class="fas fa-heart mr-3"></i>
                     Gratitude
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 8) echo "disabled-item"; ?>">
-                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 8) echo "style='pointer-events: none'"; ?> href="{{url('wow')}}">
-                    <i style="font-size: 22px;" class="fas fa-surprise mr-3"></i>
-                    Wow
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 8) echo "style='pointer-events: none'"; ?> href="{{url('desire')}}">
+                    <i style="font-size: 22px; width:20px;" class="fas fa-fire mr-3"></i>
+                    Desire 
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 9) echo "disabled-item"; ?>">
-                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 9) echo "style='pointer-events: none'"; ?> href="{{url('see-it')}}">
-                    <i style="font-size: 22px;" class="fas fa-binoculars mr-3"></i>
-                    See It!
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 9) echo "style='pointer-events: none'"; ?> href="{{url('wow')}}">
+                    <i style="font-size: 22px; width:20px;" class="fas fa-surprise mr-3"></i>
+                    Wow
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 10) echo "disabled-item"; ?>">
-                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 10) echo "style='pointer-events: none'"; ?> href="{{url('say-it')}}">
-                    <i style="font-size: 22px;" class="fas fa-microphone mr-3"></i>
-                    Say It!
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 10) echo "style='pointer-events: none'"; ?> href="{{url('see-it')}}">
+                    <i style="font-size: 22px; width:20px;" class="fas fa-binoculars mr-3"></i>
+                    See It!
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 11) echo "disabled-item"; ?>">
-                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 11) echo "style='pointer-events: none'"; ?> href="{{url('live-it')}}">
-                    <i style="font-size: 22px;" class="fas fa-play mr-3"></i>
-                    Live It!
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 11) echo "style='pointer-events: none'"; ?> href="{{url('say-it')}}">
+                    <i style="font-size: 22px; width:20px;" class="fas fa-microphone mr-3"></i>
+                    Say It!
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 12) echo "disabled-item"; ?>">
-                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 12) echo "style='pointer-events: none'"; ?> href="{{url('conclusion')}}">
-                    <i style="font-size: 22px;" class="fas fa-bullseye mr-3"></i>
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 12) echo "style='pointer-events: none'"; ?> href="{{url('live-it')}}">
+                    <i style="font-size: 22px; width:20px;" class="fas fa-play mr-3"></i>
+                    Live It!
+                </a>
+            </li>
+            <li class="nav-item my-1 <?php if ($page < 13) echo "disabled-item"; ?>">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 13) echo "style='pointer-events: none'"; ?> href="{{url('conclusion')}}">
+                    <i style="font-size: 22px; width:20px;" class="fas fa-bullseye mr-3"></i>
                     Conclusion
                 </a>
             </li>

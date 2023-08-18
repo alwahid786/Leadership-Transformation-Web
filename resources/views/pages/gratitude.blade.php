@@ -160,7 +160,7 @@
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
 		<a href="{{url('/cover')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
-		<a href="{{url('/wow/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		<a href="{{url('/desire/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 	</div>
 </section>
 @endsection
@@ -190,8 +190,8 @@
 </script>
 <script>
 	$(document).ready(function() {
-		var scrollableDiv = document.getElementById("navAccordion");
-		scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
+		// var scrollableDiv = document.getElementById("navAccordion");
+		// scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
 
 		$("#gratitudeForm").submit(function(e) {
 			e.preventDefault();

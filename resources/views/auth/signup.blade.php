@@ -1,11 +1,11 @@
 @extends('layouts.default-layout')
 @section('content')
 <section class="ftco-section">
-	<div class="container-fluid">
+	<div class="container  ">
 		<div class="row justify-content-center">
 			<div class="col-md-12 col-lg-11">
 				<div class="wrap d-md-flex">
-					<div class="login-wrap p-4 p-md-5">
+					<div class="login-wrap w-100 p-4 p-md-5">
 						<div class="d-flex">
 							<div class="w-100">
 								<h3 class="mb-4 text-green">Sign Up</h3>
@@ -41,8 +41,7 @@
 
 						<p class="text-center">Already a member? <a href="{{url('/login')}}">Sign In</a></p>
 					</div>
-					<div class="img" style="background-image: url('{{asset('assets/images/signup-img.svg')}}');">
-					</div>
+					
 				</div>
 			</div>
 		</div>

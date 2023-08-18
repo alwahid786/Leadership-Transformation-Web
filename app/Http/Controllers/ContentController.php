@@ -51,7 +51,7 @@ class ContentController extends Controller
         $loginUserId = Auth::user()->id;
         $user = User::find($loginUserId);
         // If Coming From Cover Page
-        $book = Book::where('user_id', $loginUserId)->first('designed_for');
+        $book = Book::where('user_id', $loginUserId)->first('first_name');
         if ($book == null || empty($book)) {
             return redirect()->back()->withErrors('Please add proper data first.');
         }
@@ -61,7 +61,24 @@ class ContentController extends Controller
             return view('pages.gratitude', compact('book'));
         } else {
             User::where('id', $loginUserId)->update(['page_number' => 7]);
-            return redirect('/gratitude', compact('book'));
+            return redirect('/gratitude');
+        }
+    }
+
+    // Desire FUnction 
+    public function desireFunction(Request $request)
+    {
+        $loginUserId = Auth::user()->id;
+        $user = User::find($loginUserId);
+        $book = Book::where('user_id', $loginUserId)->first();
+        if ($book->gratitude == '' || $book->gratitude == null) {
+            return redirect()->back()->with('nextError', 'Please insert and save Gratitude first.');
+        }
+        if ($user->page_number >= 8) {
+            return view('pages.desire', compact('book'));
+        } else {
+            User::where('id', $loginUserId)->update(['page_number' => 8]);
+            return redirect('/desire');
         }
     }
 
@@ -71,16 +88,16 @@ class ContentController extends Controller
         $loginUserId = Auth::user()->id;
         $user = User::find($loginUserId);
         $book = Book::where('user_id', $loginUserId)->first();
-        if ($book->gratitude == '' || $book->gratitude == null) {
-            return redirect()->back()->with('nextError', 'Please insert and save Gratitude first.');
+        if ($book->desire == '' || $book->desire == null) {
+            return redirect()->back()->with('nextError', 'Please insert and save Desire first.');
         }
         $book = Book::where('user_id', $loginUserId)->first();
 
-        if ($user->page_number >= 8) {
+        if ($user->page_number >= 9) {
             return view('pages.wow', compact('book'));
         } else {
-            User::where('id', $loginUserId)->update(['page_number' => 8]);
-            return redirect('/wow', compact('book'));
+            User::where('id', $loginUserId)->update(['page_number' => 9]);
+            return redirect('/wow');
         }
     }
 
@@ -95,11 +112,11 @@ class ContentController extends Controller
         }
         $book = Book::where('user_id', $loginUserId)->first();
 
-        if ($user->page_number >= 9) {
+        if ($user->page_number >= 10) {
             return view('pages.vision', compact('book'));
         } else {
-            User::where('id', $loginUserId)->update(['page_number' => 9]);
-            return redirect('/vision', compact('book'));
+            User::where('id', $loginUserId)->update(['page_number' => 10]);
+            return redirect('/see-it');
         }
     }
 
@@ -114,11 +131,11 @@ class ContentController extends Controller
         }
         $book = Book::where('user_id', $loginUserId)->first();
 
-        if ($user->page_number >= 10) {
+        if ($user->page_number >= 11) {
             return view('pages.inspiration', compact('book'));
         } else {
-            User::where('id', $loginUserId)->update(['page_number' => 10]);
-            return redirect('/inspiration', compact('book'));
+            User::where('id', $loginUserId)->update(['page_number' => 11]);
+            return redirect('/say-it');
         }
     }
 
@@ -133,15 +150,15 @@ class ContentController extends Controller
         }
         $book = Book::where('user_id', $loginUserId)->first();
 
-        if ($user->page_number >= 11) {
+        if ($user->page_number >= 12) {
             return view('pages.execution', compact('book'));
         } else {
-            User::where('id', $loginUserId)->update(['page_number' => 11]);
-            return redirect('/execution', compact('book'));
+            User::where('id', $loginUserId)->update(['page_number' => 12]);
+            return redirect('/live-it');
         }
     }
 
-    // execution FUnction 
+    // conclusion FUnction 
     public function conclusionFunction(Request $request)
     {
         $loginUserId = Auth::user()->id;
@@ -150,10 +167,10 @@ class ContentController extends Controller
         if ($book->execution == '' || $book->execution == null) {
             return redirect()->back()->with('nextError', 'Please insert and save Execution first.');
         }
-        if ($user->page_number >= 12) {
+        if ($user->page_number >= 13) {
             return view('pages.conclusion');
         } else {
-            User::where('id', $loginUserId)->update(['page_number' => 12]);
+            User::where('id', $loginUserId)->update(['page_number' => 13]);
             return redirect('/conclusion');
         }
     }
@@ -180,6 +197,14 @@ class ContentController extends Controller
         $loginUserId = Auth::user()->id;
         $book = Book::where('user_id', $loginUserId)->first();
         return view('pages.wow', compact('book'));
+    }
+
+    // Show desire Page
+    public function desirePage(Request $request)
+    {
+        $loginUserId = Auth::user()->id;
+        $book = Book::where('user_id', $loginUserId)->first();
+        return view('pages.desire', compact('book'));
     }
 
     // Show Vision Page
@@ -224,7 +249,6 @@ class ContentController extends Controller
             $book = new Book();
         }
         $book->user_id = $loginUserId;
-        $book->designed_for = $request->designed_for;
         $book->first_name = $request->first_name;
         $book->last_name = $request->last_name;
         $book->save();
@@ -239,6 +263,16 @@ class ContentController extends Controller
         $book->gratitude = $request->gratitude;
         $book->save();
         return redirect()->back()->with('gratitudeSuccess', 'Data inserted Successfully!');
+    }
+
+    // submit Desire Function 
+    public function submitDesire(Request $request)
+    {
+        $loginUserId = Auth::user()->id;
+        $book = Book::where('user_id', $loginUserId)->first();
+        $book->desire = $request->desire;
+        $book->save();
+        return redirect()->back()->with('desireSuccess', 'Data inserted Successfully!');
     }
 
     // submit Wow Function 

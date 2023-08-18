@@ -67,10 +67,6 @@
 				</div>
 				@endif
 				<div class="form-group mb-3">
-					<label class="label" for="name">Designed For:</label>
-					<input type="text" class="form-control validation" value="{{$book->designed_for ?? ''}}" id="designedFor" placeholder="ex: Patrick Milton" required>
-				</div>
-				<div class="form-group mb-3">
 					<label class="label" for="name">First Name:</label>
 					<input type="text" value="{{$book->first_name ?? auth()->user()->name}}" class="form-control validation" id="firstName" placeholder="ex: Jennifer" required>
 				</div>
@@ -118,7 +114,6 @@
 				return;
 			}
 			var data = {
-				designed_for: $('#designedFor').val(),
 				first_name: $('#firstName').val(),
 				last_name: $('#lastName').val(),
 			}

@@ -112,12 +112,12 @@
 @endsection
 @section('insertjavascript')
 <script>
-	$('.sidenav  li:nth-of-type(7)').addClass('active');
+	$('.sidenav  li:nth-of-type(8)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
-		var scrollableDiv = document.getElementById("navAccordion");
-		scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
+		// var scrollableDiv = document.getElementById("navAccordion");
+		// scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
 
 		$('#createPdf').click(function() {
 			window.open("{{ url('/create-pdf') }}", "_blank");
