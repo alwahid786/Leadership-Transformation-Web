@@ -90,18 +90,19 @@
 					} else {
 						var routeMapping = {
 							0: 'cover',
-							1: 'slide/1',
-							2: 'slide/2',
-							3: 'slide/3',
-							4: 'slide/4',
-							5: 'slide/5',
-							6: 'slide/6',
+							// 1: 'slide/1',
+							// 2: 'slide/2',
+							// 3: 'slide/3',
+							// 4: 'slide/4',
+							// 5: 'slide/5',
+							// 6: 'slide/6',
+							7: 'wow',
 							8: 'gratitude',
-							9: 'wow',
+							9: 'desire',
 							10: 'vision',
 							11: 'inspiration',
-							11: 'execution',
-							12: 'conclusion'
+							12: 'execution',
+							13: 'conclusion'
 						};
 						url = dataResult.data.page_number;
 						if (routeMapping.hasOwnProperty(url)) {

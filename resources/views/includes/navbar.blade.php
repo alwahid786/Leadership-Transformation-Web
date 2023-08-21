@@ -573,21 +573,21 @@ $page = auth()->user()->page_number;
                 </a>
             </li>--}}
             <li class="nav-item my-1 <?php if ($page < 7) echo "disabled-item"; ?>">
-                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 7) echo "style='pointer-events: none'"; ?> href="{{url('gratitude')}}">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 7) echo "style='pointer-events: none'"; ?> href="{{url('wow ')}}">
                     <i style="font-size: 22px; width:20px;" class="fas fa-heart mr-3"></i>
-                    Gratitude
+                    Wow
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 8) echo "disabled-item"; ?>">
-                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 8) echo "style='pointer-events: none'"; ?> href="{{url('desire')}}">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 8) echo "style='pointer-events: none'"; ?> href="{{url('gratitude')}}">
                     <i style="font-size: 22px; width:20px;" class="fas fa-fire mr-3"></i>
-                    Desire 
+                    Gratitude
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 9) echo "disabled-item"; ?>">
-                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 9) echo "style='pointer-events: none'"; ?> href="{{url('wow')}}">
+                <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 9) echo "style='pointer-events: none'"; ?> href="{{url('desire')}}">
                     <i style="font-size: 22px; width:20px;" class="fas fa-surprise mr-3"></i>
-                    Wow
+                    Desire
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 10) echo "disabled-item"; ?>">
