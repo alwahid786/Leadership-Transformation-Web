@@ -20,7 +20,7 @@ class ContentController extends Controller
 {
     use ResponseTrait;
 
-    // Slides Function 
+    // Slides Function - Disabled/ Abandoned
     public function showSlide(Request $request, $slideNumber)
     {
         $loginUserId = Auth::user()->id;

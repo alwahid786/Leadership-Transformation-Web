@@ -15,31 +15,11 @@ class RedirectionMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next)
     {
-        $user = Auth::user();
-
-        if ($user) {
-            $lastVisitedRoute = $user->page_number;
-
-            if ($lastVisitedRoute != null) {
-                dd('coming');
-                // Define a mapping of route names to actual URLs or controller methods
-                $routeMapping = [
-                    'cover' => '/slide/1',
-                    'slide1' => '/slide/2',
-                    'slide2' => '/slide/3',
-                    'slide3' => '/slide/4',
-                    'slide4' => '/slide/5',
-                    'slide5' => '/slide/6',
-                    'slide6' => '/slide/7',
-                ];
-
-                if (isset($routeMapping[$lastVisitedRoute])) {
-                    return redirect($routeMapping[$lastVisitedRoute]);
-                }
-            }
-            return redirect('/cover');
+        // Check if the user is authenticated
+        if (Auth::check()) {
+            $user = Auth::user();
         }
 
         return $next($request);
