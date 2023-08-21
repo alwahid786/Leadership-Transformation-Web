@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transformational Leadership</title>
+    <style>
+        body {
+            font-family: 'centurygothic', sans-serif;
+        }
+    </style>
 </head>
 
 <body>
@@ -331,7 +336,7 @@
                 <b>Money:</b>Commit to staying on or under budget.
             </li>
             <li>
-                <b>Play Win-Winn outcome:</b> Does the achievement of your goal benefit you, your
+                <b>Play Win-Win:</b> Does the achievement of your goal benefit you, your
                 customers, your team, your stakeholders, and the world. Establish the goal for a
                 harmonious win-win-win-win-win outcome that aligns everyone's interests.
             </li>

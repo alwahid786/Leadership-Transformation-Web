@@ -92,8 +92,7 @@
 					<h3 class="headingTitle mb-0">What Do You Want?</h3>
 				</div>
 				<div class="col-12 mt-3">
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo vel optio repudiandae officiis maxime perferendis hic harum laboriosam, rerum porro commodi vero praesentium fugit molestias vitae deserunt aspernatur non numquam et odio eligendi ipsa aperiam sed quis. Saepe, tempora eligendi! Quo adipisci pariatur cupiditate id unde vero numquam, fugiat fuga.</p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit culpa error ex molestiae, ratione libero sapiente consectetur possimus quod maxime quis aut illo nostrum voluptatem sint architecto explicabo labore cum eius distinctio beatae. Eligendi, laudantium iste vitae molestiae repellendus consectetur sit incidunt ipsam nulla eum dolorum, voluptatibus temporibus quis! Quas expedita rerum ullam dignissimos! Asperiores voluptatem earum dolor quasi, harum labore dicta. Libero quam ad nulla expedita tenetur reprehenderit sint?</p>
+					<p>"Deciding what you want and setting your goal is like crafting a masterpiece in gold. With every stroke and detail, you shape your future with clarity and brilliance. Dare to dream big. The setting of your goal is the first path to your success!" - Unknown</p>
 				</div>
 				<div class="col-12 mt-3">
 					<h4 class="mb-0">Record Audio</h4>
@@ -123,8 +122,8 @@
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
 		<a href="{{url('/gratitude')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
-		@if(auth()->user()->unlocked_pages >= 4)
-		<a href="{{url('/wow/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		@if(auth()->user()->unlocked_pages >= 5)
+		<a href="{{url('/see-it/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 		@else
 		<a href="javascript:void(0)" class="navBtns" id="nextButton" data-toggle="modal" data-target="#exampleModalCenter">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 		@endif
@@ -143,7 +142,7 @@
 			<div class="modal-body">
 				<p>You must enter Page Code to unlock next page.</p>
 				<input name="code" type="text" id="pageCode" class="form-control validation" placeholder="Write Code Here...">
-				<input name="page_number" type="hidden" id="pageNumber" value="4" class="form-control validation">
+				<input name="page_number" type="hidden" id="pageNumber" value="5" class="form-control validation">
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -175,7 +174,7 @@
 </script>
 @endif
 <script>
-	$('.sidenav  li:nth-of-type(3)').addClass('active');
+	$('.sidenav  li:nth-of-type(4)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
@@ -437,7 +436,7 @@
 						})
 						return;
 					} else {
-						window.location.href = `{{url('/wow/con')}}`
+						window.location.href = `{{url('/see-it/con')}}`
 					}
 				},
 				error: function(jqXHR, exception) {

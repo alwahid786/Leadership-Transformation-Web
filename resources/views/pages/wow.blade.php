@@ -148,9 +148,9 @@
 
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
-		<a href="{{url('/gratitude')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
-		@if(auth()->user()->unlocked_pages >= 5)
-		<a href="{{url('/see-it/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		<a href="{{url('/cover')}}" class="navBtns mr-2"><i class="fas fa-arrow-left mr-2"></i> Previous</a>
+		@if(auth()->user()->unlocked_pages >= 3)
+		<a href="{{url('/gratitude/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 		@else
 		<a href="javascript:void(0)" class="navBtns" id="nextButton" data-toggle="modal" data-target="#exampleModalCenter">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 		@endif
@@ -169,7 +169,7 @@
 			<div class="modal-body">
 				<p>You must enter Page Code to unlock next page.</p>
 				<input name="code" type="text" id="pageCode" class="form-control validation" placeholder="Write Code Here...">
-				<input name="page_number" type="hidden" id="pageNumber" value="5" class="form-control validation">
+				<input name="page_number" type="hidden" id="pageNumber" value="3" class="form-control validation">
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -201,7 +201,7 @@
 </script>
 @endif
 <script>
-	$('.sidenav  li:nth-of-type(4)').addClass('active');
+	$('.sidenav  li:nth-of-type(2)').addClass('active');
 </script>
 <script>
 	$(document).ready(function() {
@@ -462,7 +462,7 @@
 						})
 						return;
 					} else {
-						window.location.href = `{{url('/see-it/con')}}`
+						window.location.href = `{{url('/gratitude/con')}}`
 					}
 				},
 				error: function(jqXHR, exception) {

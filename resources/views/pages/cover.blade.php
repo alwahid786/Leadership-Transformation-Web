@@ -90,7 +90,7 @@
 	</div>
 	<div class="buttonSection d-flex justify-content-end align-items-center mt-5">
 		@if(auth()->user()->unlocked_pages >= 2)
-		<a href="{{url('/gratitude/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
+		<a href="{{url('/wow/con')}}" class="navBtns">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 		@else
 		<a href="javascript:void(0)" class="navBtns" id="nextButton" data-toggle="modal" data-target="#exampleModalCenter">Next<i class="fas fa-arrow-right ml-2"></i> </a>
 		@endif
@@ -108,8 +108,8 @@
 			</div>
 			<div class="modal-body">
 				<p>You must enter Page Code to unlock next page.</p>
-				<input name="code" type="text" id="pageCode" class="form-control validation" placeholder="Write Code Here...">
-				<input name="page_number" type="hidden" id="pageNumber" value="2" class="form-control validation">
+				<input name="code" type="text" id="pageCode" class="form-control validations" placeholder="Write Code Here...">
+				<input name="page_number" type="hidden" id="pageNumber" value="2" class="form-control validations">
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -192,7 +192,7 @@
 		});
 		let pageErrors = 0;
 		$("#submitCodeButton").click(function() {
-			$(".validation").each(function() {
+			$(".validations").each(function() {
 				if ($(this).val() == '') {
 					pageErrors++;
 					$(this).css('border', '1px solid red');
@@ -235,7 +235,7 @@
 						})
 						return;
 					} else {
-						window.location.href = `{{url('/gratitude/con')}}`
+						window.location.href = `{{url('/wow/con')}}`
 					}
 				},
 				error: function(jqXHR, exception) {

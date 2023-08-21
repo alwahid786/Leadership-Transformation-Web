@@ -47,13 +47,11 @@ class ContentController extends Controller
     {
         $loginUserId = Auth::user()->id;
         $user = User::find($loginUserId);
-        // If Coming From Cover Page
-        $book = Book::where('user_id', $loginUserId)->first('first_name');
-        if ($book == null || empty($book)) {
-            return redirect()->back()->withErrors('Please add proper data first.');
-        }
-        $book = Book::where('user_id', $loginUserId)->first();
 
+        $book = Book::where('user_id', $loginUserId)->first();
+        if ($book->wow == '' || $book->wow == null) {
+            return redirect()->back()->with('nextError', 'Please insert and save Wow first.');
+        }
         if ($user->page_number >= 8) {
             return view('pages.gratitude', compact('book'));
         } else {
@@ -84,9 +82,10 @@ class ContentController extends Controller
     {
         $loginUserId = Auth::user()->id;
         $user = User::find($loginUserId);
-        $book = Book::where('user_id', $loginUserId)->first();
-        if ($book->desire == '' || $book->desire == null) {
-            return redirect()->back()->with('nextError', 'Please insert and save Desire first.');
+        // If Coming From Cover Page
+        $book = Book::where('user_id', $loginUserId)->first('first_name');
+        if ($book == null || empty($book)) {
+            return redirect()->back()->withErrors('Please add proper data first.');
         }
         $book = Book::where('user_id', $loginUserId)->first();
 
@@ -322,7 +321,7 @@ class ContentController extends Controller
         // Set the response content-type to PDF
         $headers = [
             'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename=' . 'Transformational Leadership' . '".pdf"'
+            'Content-Disposition' => 'inline; filename=' . 'Transformational Leadership '. date('d-m-Y') . '".pdf"'
         ];
 
         // Return the rendered PDF in a new tab
