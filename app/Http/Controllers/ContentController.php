@@ -54,10 +54,10 @@ class ContentController extends Controller
         }
         $book = Book::where('user_id', $loginUserId)->first();
 
-        if ($user->page_number >= 7) {
+        if ($user->page_number >= 8) {
             return view('pages.gratitude', compact('book'));
         } else {
-            User::where('id', $loginUserId)->update(['page_number' => 7]);
+            User::where('id', $loginUserId)->update(['page_number' => 8]);
             return redirect('/gratitude');
         }
     }
@@ -71,10 +71,10 @@ class ContentController extends Controller
         if ($book->gratitude == '' || $book->gratitude == null) {
             return redirect()->back()->with('nextError', 'Please insert and save Gratitude first.');
         }
-        if ($user->page_number >= 8) {
+        if ($user->page_number >= 9) {
             return view('pages.desire', compact('book'));
         } else {
-            User::where('id', $loginUserId)->update(['page_number' => 8]);
+            User::where('id', $loginUserId)->update(['page_number' => 9]);
             return redirect('/desire');
         }
     }
@@ -90,10 +90,10 @@ class ContentController extends Controller
         }
         $book = Book::where('user_id', $loginUserId)->first();
 
-        if ($user->page_number >= 9) {
+        if ($user->page_number >= 7) {
             return view('pages.wow', compact('book'));
         } else {
-            User::where('id', $loginUserId)->update(['page_number' => 9]);
+            User::where('id', $loginUserId)->update(['page_number' => 7]);
             return redirect('/wow');
         }
     }
