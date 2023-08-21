@@ -492,7 +492,8 @@ $page = auth()->user()->page_number;
                 <div class="dropdown dropdown-logout">
                     <img src="{{asset('assets/images/Vector.png')}}" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">
                     <div class="dropdown-menu text-center logout-dropdown" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item logout" href="{{(url('logout'))}}"><i class="fas fa-sign-out-alt pr-2" aria-hidden="true"></i>Logout</a>
+                        <a class="dropdown-item logout text-left" href="{{(url('logout'))}}"><i class="fas fa-sign-out-alt pr-2" aria-hidden="true"></i>Logout</a>
+                        <a class="dropdown-item logout text-left" href="{{(url('page-codes'))}}"><i class="fas fa-lock pr-2" aria-hidden="true"></i>Page Codes</a>
                     </div>
                 </div>
             </div>
@@ -574,19 +575,19 @@ $page = auth()->user()->page_number;
             </li>--}}
             <li class="nav-item my-1 <?php if ($page < 7) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 7) echo "style='pointer-events: none'"; ?> href="{{url('wow ')}}">
-                    <i style="font-size: 22px; width:20px;" class="fas fa-heart mr-3"></i>
+                    <i style="font-size: 22px; width:20px;" class="fas fa-surprise mr-3"></i>
                     Wow
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 8) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 8) echo "style='pointer-events: none'"; ?> href="{{url('gratitude')}}">
-                    <i style="font-size: 22px; width:20px;" class="fas fa-fire mr-3"></i>
+                    <i style="font-size: 22px; width:20px;" class="fas fa-heart mr-3"></i>
                     Gratitude
                 </a>
             </li>
             <li class="nav-item my-1 <?php if ($page < 9) echo "disabled-item"; ?>">
                 <a class="nav-link sidenav-item d-flex align-items-center" <?php if ($page < 9) echo "style='pointer-events: none'"; ?> href="{{url('desire')}}">
-                    <i style="font-size: 22px; width:20px;" class="fas fa-surprise mr-3"></i>
+                    <i style="font-size: 22px; width:20px;" class="fas fa-fire mr-3"></i>
                     Desire
                 </a>
             </li>

@@ -321,7 +321,7 @@ class ContentController extends Controller
         // Set the response content-type to PDF
         $headers = [
             'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename=' . 'Transformational Leadership '. date('d-m-Y') . '".pdf"'
+            'Content-Disposition' => 'inline; filename=' . 'Transformational Leadership ' . date('d-m-Y') . '".pdf"'
         ];
 
         // Return the rendered PDF in a new tab
@@ -346,5 +346,23 @@ class ContentController extends Controller
         } else {
             return $this->sendError('Incorrect Page Code!');
         }
+    }
+
+    public function updatePageCode(Request $request)
+    {
+        $loginUserId = Auth::user()->id;
+        $pageCode = PageCode::where('id', $request->id)->update(['code' => $request->code]);
+        if ($pageCode) {
+            return $this->sendResponse([], "Page Code Updated Successfully!");
+        } else {
+            return $this->sendError('Error while updating Page Code!');
+        }
+    }
+
+    public function pageCodes(Request $request)
+    {
+        $loginUserId = Auth::user()->id;
+        $pageCodes = PageCode::all();
+        return view('pages.page-codes', compact('pageCodes'));
     }
 }
