@@ -73,4 +73,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/vision/submit', [ContentController::class, 'submitVision'])->name('submitVision');
     Route::post('/inspiration/submit', [ContentController::class, 'submitInspiration'])->name('submitInspiration');
     Route::post('/execution/submit', [ContentController::class, 'submitExecution'])->name('submitExecution');
+    Route::get('/welcome/submit', [ContentController::class, 'submitWelcome'])->name('submitWelcome');
+
+    Route::get('/welcome', function () {
+        return view('pages.welcome');
+    });
 });

@@ -88,6 +88,11 @@
 						})
 						return;
 					} else {
+						if (dataResult.data.is_welcomed == 0) {
+							console.log('coming');
+							window.location.href = `{{url('/welcome')}}`;
+							return;
+						}
 						var routeMapping = {
 							0: 'cover',
 							// 1: 'slide/1',

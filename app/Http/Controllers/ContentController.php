@@ -311,6 +311,18 @@ class ContentController extends Controller
         return redirect()->back()->with('executionSuccess', 'Data inserted Successfully!');
     }
 
+    // submit Welcome Function 
+    public function submitWelcome(Request $request)
+    {
+        $loginUserId = Auth::user()->id;
+        $user = User::where('id', $loginUserId)->update(['is_welcomed' => 1]);
+        if ($user) {
+            return redirect('/cover');
+        } else {
+            return redirect('/cover');
+        }
+    }
+
     // Create PDF Function 
     public function createPdf()
     {
