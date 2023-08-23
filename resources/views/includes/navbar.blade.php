@@ -492,7 +492,9 @@ $page = auth()->user()->page_number;
                 <div class="dropdown dropdown-logout">
                     <img src="{{asset('assets/images/Vector.png')}}" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">
                     <div class="dropdown-menu text-center logout-dropdown" aria-labelledby="dropdownMenuButton">
+                        @if(auth()->user()->email == 'don@donwilliamsglobal.com')
                         <a class="dropdown-item logout text-left" href="{{(url('page-codes'))}}"><i class="fas fa-lock pr-2" aria-hidden="true"></i>Page Codes</a>
+                        @endif
                         <a class="dropdown-item logout text-left" href="{{(url('logout'))}}"><i class="fas fa-sign-out-alt pr-2" aria-hidden="true"></i>Logout</a>
                     </div>
                 </div>
