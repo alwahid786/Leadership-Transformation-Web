@@ -12047,6 +12047,15 @@ h5,
   padding: 20px;
 }
 
+@media screen and (max-width: 992px) {
+  .contentSection {
+    margin-top: 70px;
+    margin-left: 0px;
+    padding: 20px;
+  }
+
+}
+
 .contentRow {
   background-color: white;
   padding: 30px 20px;
