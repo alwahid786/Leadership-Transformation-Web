@@ -553,7 +553,7 @@
     </div>
 
     <div class="main-selction" style="padding-top: 10px;position:relative; margin: 0 auto; width: 100%; page-break-before: always;">
-        <img src="{{asset('assets/images/image21.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin-bottom: 90px;">
+        <img src="{{asset('assets/images/image21.png')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin-bottom: 90px;">
         <img src="{{asset('assets/images/image19.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin-bottom: 90px;">
 
         <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
