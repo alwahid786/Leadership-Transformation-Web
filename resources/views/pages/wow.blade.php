@@ -101,15 +101,14 @@
 					</p>
 					<p>
 						This amazing flight attendant shows up with a four-inch memory foam mattress, wrapped in
-						luxurious 103-count sheets. I mean, talk about attention to detail! As we continue our journey,
+						luxurious 1200 thread count sheets. I mean, talk about attention to detail! As we continue our journey,
 						we find ourselves in Dubai, the busiest airport in the world. Now, you may think clearing
 						customs there would be a dreaded task, but guess what? We had something even more magical
 						than a Disney World Fast pass – included in our ticket price! We bypassed the never-ending
 						lines and sailed through customs with ease. It was like achieving the impossible!
 					</p>
 					<p>
-						Finally, in Thailand, after traveling for a grueling 24 hours, we were exhausted. But as if by
-						magic, a driver named Don Williams appeared and whisked us away to a luxurious hotel. It was
+						Finally, in Thailand, after traveling for a grueling 24 hours, we were exhausted. But as if by magic, a driver appears and whisks us away to a luxurious hotel. It was
 						the middle of the night, yet we were greeted with warmth and hospitality that truly made us
 						say, "Wow!" These experiences made me realize the immense power of creating moments that
 						go above and beyond expectations.

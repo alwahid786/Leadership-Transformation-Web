@@ -101,14 +101,10 @@
 					truly believing in its possibility.
 					</p>
 					<p>
-					<h5 class="mb-0">Bill Gates Vision –</h5> “Put a computer on every desk in every home in the World.” Bill Gates,
-					founder and genius behind MicrosoA, set out on a mission to put a computer on every desk in
-					every home across the globe.
+					<h5 class="mb-0">Bill Gates Vision –</h5> “Put a computer on every desk in every home in the World.” Bill Gates, founder and genius behind Microsoft, set out on a mission to put a computer on every desk in every home across the globe
 					</p>
 					<p>
-					<h5 class="mb-0">Steve Jobs – User Experience.</h5> The visionary leader of Apple, may not have formally wriEen
-					down his vision statement. However, he was maniacal about craAing an unparalleled user
-					experience. Steve wanted technology to be intuiIve, powerful, and effortlessly accessible.
+					<h5 class="mb-0">Steve Jobs – User Experience.</h5> The visionary leader of Apple, may not have formally written down his vision statement. However, he was maniacal about creating an unparalleled user experience. Steve wanted technology to be intuitive, powerful, and effortlessly accessible.
 					</p>
 					<p>
 					<h5 class="mb-0">See things from the other person’s perspective.</h5> Understanding the power of perspective is

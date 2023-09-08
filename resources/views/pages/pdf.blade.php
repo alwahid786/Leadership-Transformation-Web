@@ -9,6 +9,10 @@
         body {
             font-family: 'centurygothic', sans-serif;
         }
+
+        ul li {
+            font-size: 20px;
+        }
     </style>
 </head>
 
@@ -23,7 +27,7 @@
         <h2 style="font-size: 1.6rem;">Prepared for: </h2>
         <h1>{{$book->first_name}} {{$book->last_name}}</h1>
         <footer style=" position:absolute; bottom: 20px; left:0; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -42,8 +46,8 @@
         </p>
         <img src="{{asset('assets/images/image2.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; padding-bottom: 80px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -71,8 +75,8 @@
         <h2>Let's commit to Learning & DOING together!</h2>
         <img src="{{asset('assets/images/image3.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; padding-bottom: 80px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -102,8 +106,8 @@
 
         <img src="{{asset('assets/images/image5.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin: 0 auto; ">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -129,8 +133,8 @@
 
         <img src="{{asset('assets/images/image6.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; padding-bottom: 80px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -160,8 +164,8 @@
 
         <img src="{{asset('assets/images/image7.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; padding-bottom: 80px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -187,8 +191,8 @@
 
         <img src="{{asset('assets/images/image8.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; padding-bottom: 80px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -226,8 +230,8 @@
 
         <img src="{{asset('assets/images/image9.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     <!-- Wow CONTENT  -->
@@ -271,8 +275,8 @@
 
 
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -305,8 +309,8 @@
 
         <img src="{{asset('assets/images/image11.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     @if(isset($book['gratitude']) && $book['gratitude'] != '')
@@ -352,8 +356,8 @@
 
         <img src="{{asset('assets/images/image12.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     @if(isset($book['desire']) && $book['desire'] != '')
@@ -392,10 +396,10 @@
             <br> <br>
         </p>
 
-        <img src="{{asset('assets/images/image13.PNG')}}" alt="Missing image" style="width: 80%; padding-top: 30px;">
+        <img src="{{asset('assets/images/image13.PNG')}}" alt="Missing image" style="width: 80%; padding-top: 100px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     @if(isset($book['vision']) && $book['vision'] != '')
@@ -418,8 +422,8 @@
 
         <img src="{{asset('assets/images/image14.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -460,10 +464,10 @@
             just understand.
         </p>
 
-        <img src="{{asset('assets/images/image15.PNG')}}" alt="Missing image" style="width: 60%; padding-top: 30px; margin-bottom: 30px;">
+        <img src="{{asset('assets/images/image15.PNG')}}" alt="Missing image" style="width: 60%; padding-top: 100px; margin-bottom: 30px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     @if(isset($book['inspiration']) && $book['inspiration'] != '')
@@ -502,8 +506,8 @@
 
         <img src="{{asset('assets/images/image16.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin-bottom: 30px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     @if(isset($book['execution']) && $book['execution'] != '')
@@ -526,8 +530,8 @@
 
         <img src="{{asset('assets/images/image17.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin-bottom: 90px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -547,8 +551,8 @@
 
         <img src="{{asset('assets/images/image18.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin-bottom: 90px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -556,8 +560,127 @@
         <img src="{{asset('assets/images/image21.png')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin-bottom: 90px;">
         <img src="{{asset('assets/images/image19.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin-bottom: 90px;">
 
-        <footer style=" position:absolute; bottom: 20px; left:40%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 20%;">
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
+        </footer>
+    </div>
+    <div class="main-selction" style="padding-top: 10px;position:relative; margin: 0 auto; width: 100%; page-break-before: always;">
+        <div style="text-align: center; margin-bottom:15px">
+            <h2 style="width: fit-content; margin-left: auto; margin-right: auto;color:gray;">80 Days to Improved Leadership</h2>
+        </div>
+        <p style=" text-align: justify; font-size:20px;">
+            Consider investing a minute or two a day and to read or better yet recite a leadership quote at the beginning of your day. The more you think and talk about leadership the easier it is to begin to transform your leadership to a higher level. <br><br>
+        </p>
+        <ul>
+            <li>"Your time is limited, don't waste it living someone else's dream." - Steve Jobs</li>
+            <li>"Your positive action combined with positive thinking results in success." - Shiv Khera</li>
+            <li>"Your dreams are the blueprints for your reality. Don't stop dreaming, keep building." - Unknown</li>
+            <li>"You miss 100% of the shots you don't take." - Wayne Gretzky</li>
+            <li>"You don't have to be great to start, but you have to start to be great." - Zig Ziglar</li>
+            <li>"True leadership is about making a positive impact on people's lives and leaving the world a better place than you found it." - Unknown</li>
+            <li>"True leaders are those who never stop learning and growing." - Unknown</li>
+            <li>"True leaders are those who are able to lead through their actions, not just their words." - Unknown</li>
+            <li>"True leaders are not those who strive to be first, they are the ones who put their team first." - Unknown</li>
+            <li>"To lead people, walk beside them." - Lao Tzu</li>
+            <li>"To be an effective leader, you must be able to inspire, motivate, and empower others." - Unknown</li>
+            <li>"The true test of leadership is how well you function in a crisis." - Brian Tracy</li>
+            <li>"The strength of the team is each individual member. The strength of each member is the team." - Phil Jackson</li>
+            <li>"The single biggest way to impact an organization is to focus on leadership development. There is almost no limit to the potential of an organization that recruits good people, raises them up as leaders and continually develops them." - John C. Maxwell</li>
+            <li>"The secret of getting ahead is getting started." - Mark Twain</li>
+            <li>"The road to success and the road to failure are almost exactly the same." - Colin R. Davis</li>
+            <li>"The only way to do great work is to love what you do." - Steve Jobs</li>
+            <li>"The only limit to our realization of tomorrow will be our doubts of today." - Franklin D. Roosevelt</li>
+            <li>"The most successful leaders are those who have the unique ability to inspire and mobilize others to greatness." - Unknown</li>
+            <li>"The most successful leaders are those who are not afraid to make mistakes and learn from them." - Unknown</li>
+            <li>"The most successful leaders are those who are able to adapt and evolve with their team." - Unknown</li>
+            <li>"The most powerful leadership tool you have is your own personal example." - John Wooden</li>
+            <li>"The most effective way to lead is to make people feel valued and appreciated." - Unknown</li>
+            <li>"The most effective leaders are those who are able to put themselves in other people's shoes and see the world from their perspective." - Unknown</li>
+            <li>"The hardest part is getting started, but once you do, you'll be unstoppable." - Unknown</li>
+            <li>"The harder you work for something, the greater you'll feel when you achieve it." - Unknown</li>
+            <li>"The greatest leaders are those willing to take risks, make mistakes, and learn from them." - Brené Brown</li>
+            <li>"The greatest leaders are not those who strive to be first but those who are first to strive and give their all for the success of the team." - Unknown</li>
+            <li>"The biggest risk in business is not taking any risks at all." - Mark Zuckerberg</li>
+            <li>"The best way to predict the future is to create it." - Peter Drucker</li>
+            <li>"The best way to lead is by example." - Unknown</li>
+            <li>"The best revenge is massive success." - Frank Sinatra</li>
+            <li>"The best leaders are those who can communicate their vision and inspire others to join them on the journey towards success." - Unknown</li>
+            <li>"The best leaders are those who are able to balance their strengths and weaknesses and use them to inspire their team." - Unknown</li>
+            <li>"The best leaders are those most interested in surrounding themselves with assistants and associates smarter than they are." - John C. Maxwell</li>
+            <li>"The best leaders are clear. They continually light the way, and in the process, let each person know that what they do makes a difference." - John C. Maxwell</li>
+
+        </ul>
+
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
+        </footer>
+    </div>
+    <div class="main-selction" style="padding-top: 10px;position:relative; margin: 0 auto; width: 100%; page-break-before: always;">
+        <div style="text-align: center; margin-bottom:15px">
+            <h2 style="width: fit-content; margin-left: auto; margin-right: auto;color:gray;">80 Days to Improved Leadership</h2>
+        </div>
+        <ul>
+            <li>"The art of communication is the language of leadership." - James Humes</li>
+            <li>"Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful." - Albert Schweitzer</li>
+            <li>"Success is not just about making money. It's about making a difference." - Unknown</li>
+            <li>"Success is not final; failure is not fatal. It is the courage to continue that counts." - Winston Churchill</li>
+            <li>"Strive not to be a success, but rather to be of value." - Albert Einstein</li>
+            <li>"Persistence is the key to success. Don't give up, keep going!" - Unknown</li>
+            <li>"Outstanding leaders go out of their way to boost the self-esteem of their personnel. If people believe in themselves, it's amazing what they can accomplish." - Sam Walton</li>
+            <li>"Opportunities don't happen. You create them." - Chris Grosser</li>
+            <li>"Leadership is the capacity to translate vision into reality." - Warren Bennis</li>
+            <li>"Leadership is the art of getting someone else to do something you want done because they want to do it." - Dwight D. Eisenhower</li>
+            <li>"Leadership is not about being the boss, it's about being a coach and helping your team reach their full potential." - Unknown</li>
+            <li>"Leadership is not about being the best. It is about making everyone else better." - Unknown</li>
+            <li>"Leadership is not about being perfect, it's about being adaptable and humble enough to learn and grow." - Unknown</li>
+            <li>"Leadership is not about being in charge. It's about taking care of those in your charge." - Simon Sinek</li>
+
+            <li>"Leadership is not about achieving greatness for oneself, it's about helping others achieve greatness." - Unknown</li>
+            <li>"Leadership is about making others better as a result of your presence and making sure that impact lasts in your absence." - Sheryl Sandberg</li>
+            <li>"Leadership is about empathy. It is about having the ability to relate to and connect with people for the purpose of inspiring and empowering their lives." - Oprah Winfrey</li>
+            <li>"Leaders don't create followers, they create more leaders." - Tom Peters</li>
+            <li>"If you really look closely, most overnight successes took a long time." - Steve Jobs</li>
+            <li>"Great leaders find ways to connect with their team and inspire them to reach new heights." - Unknown</li>
+            <li>"Great leaders don't set out to be a leader. They set out to make a difference. It's never about the role, always about the goal." - Lisa Haisha</li>
+            <li>"Great leaders are willing to sacrifice their own personal interests for the good of the team." - John Wooden</li>
+            <li>"Great leaders are remembered for their impact on people's lives, not for their title or position." - Unknown</li>
+            <li>"Good leadership consists of showing average people how to harness the collective wisdom and experience of those around them." - James Surowiecki</li>
+            <li>"Dream big, work hard, stay focused, and surround yourself with good people." - Unknown</li>
+            <li>"Don't watch the clock; do what it does. Keep going." - Sam Levenson</li>
+            <li>"Don't wait for opportunity, create it." - Unknown</li>
+            <li>"Don't be afraid to go out on a limb. That's where the fruit is." - H. Jackson Brown Jr.</li>
+            <li>"Don't be afraid to give up the good to go for the great." - John D. Rockefeller</li>
+            <li>"Believe you can and you're halfway there." - Theodore Roosevelt</li>
+            <li>"Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle." - Christian D. Larson</li>
+            <li>"Being a leader is not just about telling people what to do, it's about inspiring them to reach for the stars." - Unknown</li>
+            <li>"A true leader has the confidence to stand alone, the courage to make tough decisions, and the compassion to listen to the needs of others." - Douglas MacArthur</li>
+            <li>"A successful leader sees the invisible, feels the intangible, and achieves the impossible." - Winston Churchill</li>
+            <li>"A leader's vision and ability to communicate that vision is what sets them apart." - Unknown</li>
+            <li>"A leader's most important role is to empower and equip their team to reach their full potential." - Unknown</li>
+
+        </ul>
+
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
+        </footer>
+    </div>
+    <div class="main-selction" style="padding-top: 10px;position:relative; margin: 0 auto; width: 100%; page-break-before: always;">
+        <div style="text-align: center; margin-bottom:15px">
+            <h2 style="width: fit-content; margin-left: auto; margin-right: auto;color:gray;">80 Days to Improved Leadership</h2>
+        </div>
+        <ul>
+            <li>"A leader's job is not to do the work for others, it's to help others figure out how to do it themselves." - Simon Sinek</li>
+            <li>"A leader is someone who sees the potential in others and helps them realize it." - Unknown</li>
+            <li>"A leader is someone who sees greatness in other people and helps them achieve it." - Kamal Ravikant</li>
+            <li>"A leader is someone who inspires others to do their best and be their best." - Unknown</li>
+            <li>"A leader is one who knows the way, goes the way, and shows the way." - John C. Maxwell</li>
+            <li>"A great leader is someone who is able to inspire their team to overcome obstacles and achieve their goals." - Unknown</li>
+            <li>"A good leader takes a little more than his share of the blame, a little less than his share of the credit." - Arnold H. Glasow</li>
+            <li>"A genuine leader is not a searcher for consensus but a molder of consensus." - Martin Luther King Jr.</li>
+        </ul>
+
+        <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
+            <img src="{{asset('assets/images/footerlogo.PNG')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 

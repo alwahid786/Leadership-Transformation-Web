@@ -94,8 +94,7 @@
 				<div class="col-12 mt-3">
 					<p>
 					<h5 class="mb-0">The Ripple Effect of Your Actions</h5>
-					As a leader, your actions speak far louder than words. In fact the scrams of your actions many
-					times drown out the sound of your words.
+					As a leader, your actions speak far louder than words. In fact, the screams of your actions many times drown out the sound of your words.
 					</p>
 					<p>
 					<h5 class="mb-0">Embrace the Power of Observation</h5>

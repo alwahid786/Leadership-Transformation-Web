@@ -99,7 +99,7 @@
 				<div class="confetti-img mx-auto">
 					<img src="{{asset('assets/images/confetti.png')}}" alt="">
 				</div>
-				<p class="px-5 py-3 text-center" style="font-size: 18px;">WOOHOO! You’ve already taken the next step toward improving as a Transformational Leader! I’m grateful to you for allowing me to provide a little help in your journey. Press the button and receive a PDF of this presentation, your entries and 100 days of Leadership Quotes.</p>
+				<p class="px-5 py-3 text-center" style="font-size: 18px;">WOOHOO! You’ve already taken the next step toward improving as a Transformational Leader! I’m grateful to you for allowing me to provide a little help in your journey. Press the button and receive a PDF of this presentation, your entries and 80 days of Leadership Quotes.</p>
 			</div>
 			<button style="font-size: 18px;" id="createPdf" class="btn btn-primary mx-auto"><i class="fas fa-file-pdf mr-2"></i>Convert to PDF</button>
 		</div>
