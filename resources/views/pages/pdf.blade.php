@@ -209,15 +209,13 @@
             out of nowhere and asks if you want a mattress. Yes, a mattress! Who would've thought? But
             that's what happened to me, and let me tell you, it was a game-changing moment, my friends.
             <br><br>
-            This amazing flight attendant shows up with a four-inch memory foam mattress, wrapped in
-            luxurious 103-count sheets. I mean, talk about attention to detail! As we continue our journey,
+            This amazing flight attendant shows up with a four-inch memory foam mattress, wrapped in luxurious 1200 thread count sheets. I mean, talk about attention to detail! As we continue our journey,
             we find ourselves in Dubai, the busiest airport in the world. Now, you may think clearing
             customs there would be a dreaded task, but guess what? We had something even more magical
             than a Disney World Fast pass – included in our ticket price! We bypassed the never-ending
             lines and sailed through customs with ease. It was like achieving the impossible!
             <br> <br>
-            Finally, in Thailand, after traveling for a grueling 24 hours, we were exhausted. But as if by
-            magic, a driver named Don Williams appeared and whisked us away to a luxurious hotel. It was
+            Finally, in Thailand, after traveling for a grueling 24 hours, we were exhausted. But as if by magic, a driver appears and whisks us away to a luxurious hotel. It was
             the middle of the night, yet we were greeted with warmth and hospitality that truly made us
             say, "Wow!" These experiences made me realize the immense power of creating moments that
             go above and beyond expectations.<br> <br>
@@ -380,13 +378,9 @@
             goals, imagine every detail - how it looks, smells, and tastes. Seeing your vision is essential for
             truly believing in its possibility.
             <br> <br>
-            <b>Bill Gates Vision – </b>“Put a computer on every desk in every home in the World.” Bill Gates,
-            founder and genius behind MicrosoA, set out on a mission to put a computer on every desk in
-            every home across the globe.
+            <b>Bill Gates Vision – </b>“Put a computer on every desk in every home in the World.” Bill Gates, founder and genius behind Microsoft, set out on a mission to put a computer on every desk in every home across the globe.
             <br> <br>
-            <b>Steve Jobs –</b> User Experience. The visionary leader of Apple, may not have formally wriEen
-            down his vision statement. However, he was maniacal about craAing an unparalleled user
-            experience. Steve wanted technology to be intuiIve, powerful, and effortlessly accessible.
+            <b>Steve Jobs –</b> The visionary leader of Apple, may not have formally written down his vision statement. However, he was maniacal about creating an unparalleled user experience. Steve wanted technology to be intuitive, powerful, and effortlessly accessible.
             <br> <br>
             <b> See things from the other person’s perspective.</b> Understanding the power of perspective is
             crucial when leading others. Adopting the mindset of those you seek to influence will help you
@@ -484,8 +478,7 @@
         <h2 style="font-size: 1.6rem;"> The Ripple Effect of Your Actions</h2>
         <p style=" text-align: justify; font-size:20px;">
 
-            As a leader, your actions speak far louder than words. In fact the scrams of your actions many
-            times drown out the sound of your words.
+            As a leader, your actions speak far louder than words. In fact, the screams of your actions many times drown out the sound of your words
         </p>
 
         <h2 style="font-size: 1.6rem;"> Embrace the Power of Observation</h2>
