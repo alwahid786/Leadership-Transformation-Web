@@ -27,7 +27,7 @@
         <h2 style="font-size: 1.6rem;">Prepared for: </h2>
         <h1>{{$book->first_name}} {{$book->last_name}}</h1>
         <footer style=" position:absolute; bottom: 20px; left:0; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -47,7 +47,7 @@
         <img src="{{asset('assets/images/image2.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; padding-bottom: 80px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -76,7 +76,7 @@
         <img src="{{asset('assets/images/image3.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; padding-bottom: 80px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -107,7 +107,7 @@
         <img src="{{asset('assets/images/image5.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin: 0 auto; ">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -134,7 +134,7 @@
         <img src="{{asset('assets/images/image6.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; padding-bottom: 80px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -165,7 +165,7 @@
         <img src="{{asset('assets/images/image7.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; padding-bottom: 80px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -192,7 +192,7 @@
         <img src="{{asset('assets/images/image8.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; padding-bottom: 80px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -229,7 +229,7 @@
         <img src="{{asset('assets/images/image9.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     <!-- Wow CONTENT  -->
@@ -274,7 +274,7 @@
 
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -308,7 +308,7 @@
         <img src="{{asset('assets/images/image11.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     @if(isset($book['gratitude']) && $book['gratitude'] != '')
@@ -355,7 +355,7 @@
         <img src="{{asset('assets/images/image12.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     @if(isset($book['desire']) && $book['desire'] != '')
@@ -393,7 +393,7 @@
         <img src="{{asset('assets/images/image13.PNG')}}" alt="Missing image" style="width: 80%; padding-top: 100px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     @if(isset($book['vision']) && $book['vision'] != '')
@@ -417,7 +417,7 @@
         <img src="{{asset('assets/images/image14.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -461,7 +461,7 @@
         <img src="{{asset('assets/images/image15.PNG')}}" alt="Missing image" style="width: 60%; padding-top: 100px; margin-bottom: 30px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     @if(isset($book['inspiration']) && $book['inspiration'] != '')
@@ -499,7 +499,7 @@
         <img src="{{asset('assets/images/image16.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin-bottom: 30px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     @if(isset($book['execution']) && $book['execution'] != '')
@@ -523,7 +523,7 @@
         <img src="{{asset('assets/images/image17.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin-bottom: 90px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
@@ -544,7 +544,7 @@
         <img src="{{asset('assets/images/image18.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin-bottom: 90px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     <div class="main-selction" style="padding-top: 10px;position:relative; margin: 0 auto; width: 100%; page-break-before: always;">
@@ -552,7 +552,7 @@
         <img src="{{asset('assets/images/image19.PNG')}}" alt="Missing image" style="width: 100%; padding-top: 30px; margin-bottom: 90px;">
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     <div class="main-selction" style="padding-top: 10px;position:relative; margin: 0 auto; width: 100%; page-break-before: always;">
@@ -603,7 +603,7 @@
         </ul>
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     <div class="main-selction" style="padding-top: 10px;position:relative; margin: 0 auto; width: 100%; page-break-before: always;">
@@ -652,7 +652,7 @@
         </ul>
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
     <div class="main-selction" style="padding-top: 10px;position:relative; margin: 0 auto; width: 100%; page-break-before: always;">
@@ -671,7 +671,7 @@
         </ul>
 
         <footer style=" position:absolute; bottom: 20px; left:30%; right:0; width: 100%; ">
-            <img src="{{asset('assets/images/footerlogo.png')}}" alt="Logo Missing" style="width: 40%;">
+            <img src="{{asset('assets/images/footerlogos.png')}}" alt="Logo Missing" style="width: 40%;">
         </footer>
     </div>
 
